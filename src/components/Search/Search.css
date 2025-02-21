@@ -38,7 +38,7 @@
 
 .input:focus,
 .input:not(:placeholder-shown) {
-  width: 12em;
+  width: calc(100vw - 14rem);
 }
 
 .input:focus-visible {
@@ -100,6 +100,11 @@ input[type='search']::-webkit-search-results-decoration {
 @media (min-width: 600px) {
   .search-wrapper {
     font-size: 1rem;
+  }
+
+  .input:focus,
+  .input:not(:placeholder-shown) {
+    width: 12em;
   }
 }
 
