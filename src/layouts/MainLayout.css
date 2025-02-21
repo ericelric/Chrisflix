@@ -1,0 +1,14 @@
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.main-wrapper {
+  padding: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .main-wrapper {
+    padding: 2rem 4rem;
+  }
+}

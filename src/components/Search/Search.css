@@ -1,0 +1,119 @@
+.search-wrapper {
+  font-size: 0.925rem;
+  position: relative;
+}
+
+.search-dummy {
+  height: 3em;
+  width: 2em;
+}
+
+.search {
+  position: absolute;
+  right: 0;
+  top: 0.4em;
+}
+
+.input {
+  background-color: var(--background-color);
+  border-radius: 3em;
+  border: none;
+  border: solid 0.2em transparent;
+  color: var(--font-color);
+  font-size: 1em;
+  outline: none;
+  padding: 0.375em 0.75em;
+  transition: width 250ms;
+  width: 2.2em;
+  height: 2.2em;
+}
+
+.input::placeholder {
+  color: var(--background-color);
+}
+
+.input:focus::placeholder {
+  color: #a4a4a4;
+}
+
+.input:focus,
+.input:not(:placeholder-shown) {
+  width: 12em;
+}
+
+.input:focus-visible {
+  background: linear-gradient(var(--background-color), var(--background-color))
+      padding-box,
+    linear-gradient(
+        45deg,
+        rgba(255, 172, 94, 1) 0%,
+        rgba(207, 23, 148, 1) 12%,
+        rgba(140, 24, 156, 1) 34%,
+        rgba(91, 24, 162, 1) 50%,
+        rgba(60, 22, 191, 1) 68%,
+        rgba(6, 216, 249, 1) 100%
+      )
+      border-box;
+}
+
+.search-icon,
+.x-icon {
+  background-color: unset;
+  color: var(--font-color);
+  cursor: pointer;
+  height: 1em;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0.6em;
+  rotate: 90deg;
+  top: 50%;
+  transition-behavior: discrete;
+  transition-duration: 150ms;
+  transition-property: opacity, rotate, visibility;
+  translate: 0 -50%;
+  visibility: hidden;
+  width: 1em;
+}
+
+.search-wrapper:has(.input:placeholder-shown) .search-icon {
+  opacity: 1;
+  pointer-events: all;
+  rotate: 0deg;
+  visibility: visible;
+}
+
+.search-wrapper:has(.input:not(:placeholder-shown)) .x-icon {
+  opacity: 1;
+  pointer-events: all;
+  rotate: 0deg;
+  visibility: visible;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  appearance: none;
+}
+
+@media (min-width: 600px) {
+  .search-wrapper {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-dummy {
+    height: 3em;
+    width: 7em;
+  }
+
+  .input {
+    width: 7em;
+  }
+
+  .input::placeholder {
+    color: #a5a5a5;
+  }
+}

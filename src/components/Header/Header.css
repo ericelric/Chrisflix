@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  font-family: 'Poppins', serif;
+  font-weight: 200;
+  height: 4rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__left,
+.header__right {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header__logo {
+  height: 2rem;
+}
+
+.header__link {
+  --bold: 500;
+  align-items: center;
+  display: none;
+  flex-direction: column;
+}
+
+.header__link:hover {
+  font-weight: var(--bold);
+}
+
+.header__link::before {
+  content: attr(data-text) / '';
+  font-weight: var(--bold);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+}
+
+.header__icon {
+  font-size: 1.25rem;
+}
+
+/* prettier-ignore */
+.header__background {
+  --background: var(--black);
+  --size: 5px;
+  backdrop-filter: blur(30px);
+  background-image: linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+    linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+    linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+    linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+    linear-gradient(to bottom, transparent var(--size), var(--background) var(--size));
+  background-size: calc(var(--size) * 2) var(--size),
+    calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size),
+    calc(var(--size) * 2) var(--size), 100% calc(100% - var(--size) * 3);
+  background-position: 0 var(--size), top left, 0 calc(100% - var(--size)), bottom left, 0 var(--size);
+  background-repeat: repeat-x;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 5px -2px;
+}
+
+@media (min-width: 600px) {
+  .header {
+    height: 5rem;
+  }
+
+  .header__logo {
+    height: 2.5rem;
+  }
+
+  .header__link {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__logo {
+    margin-right: 2rem;
+  }
+
+  .header__left,
+  .header__right {
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    padding: 1rem 4rem;
+  }
+}
+
+@media speech {
+  .header__link::before {
+    display: none;
+  }
+}

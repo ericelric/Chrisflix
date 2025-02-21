@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Funnel+Display:wght@300..800&family=Lobster&family=Notable&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --background-color: #1a1a1a;
+  --font-color: #eee;
+  --black: #000;
+  --white: #fff;
+  --red: #ff3838;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--font-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  font-family: 'Lobster';
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 600px) {
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  color: var(--font-color);
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+}
+.link::after {
+  background-color: var(--white);
+  bottom: -2px;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  transition: all 150ms;
+  width: 0;
+}
+.link:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.active {
+  font-weight: 500;
+}
+.active::after {
+  left: 0;
+  width: 100%;
+}
