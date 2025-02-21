@@ -60,5 +60,5 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 - [ ] Watchlist & Favorites
 
 ---
-Chrisflix - A Netflix-inspired Trailer Streaming App
+Chrisflix - A Netflix-inspired Trailer Streaming App<br>
 Licensed under the MIT License. See LICENSE file for details.
