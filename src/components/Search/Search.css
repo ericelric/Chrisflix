@@ -61,11 +61,12 @@
   background-color: unset;
   color: var(--font-color);
   cursor: pointer;
+  font-size: 1.2em;
   height: 1em;
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: 0.6em;
+  right: 0.35em;
   rotate: 90deg;
   top: 50%;
   transition-behavior: discrete;
@@ -106,6 +107,12 @@ input[type='search']::-webkit-search-results-decoration {
   .input:not(:placeholder-shown) {
     width: 12em;
   }
+
+  .search-icon,
+  .x-icon {
+    font-size: 1.125em;
+    right: 0.45em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -120,5 +127,10 @@ input[type='search']::-webkit-search-results-decoration {
 
   .input::placeholder {
     color: #a5a5a5;
+  }
+
+  .search-icon,
+  .x-icon {
+    right: 0.4em;
   }
 }

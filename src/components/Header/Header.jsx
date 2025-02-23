@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/chrisflix-logo.svg';
 import Search from '../Search/Search.jsx';
-import { GoHistory } from 'react-icons/go';
+import { GoHeart } from 'react-icons/go';
+
 import './Header.css';
+import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 
 const Header = () => {
   return (
@@ -29,11 +31,12 @@ const Header = () => {
       <nav className="header__right">
         <Search />
         <NavLink to="/history" className="header__link header__icon link">
-          <GoHistory />
+          <GoHeart />
         </NavLink>
         <NavLink to="/profile" className="header__link link" data-text="Eric">
-          Eric
+          My Profile
         </NavLink>
+        <MobileMenu />
       </nav>
     </header>
   );

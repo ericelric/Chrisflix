@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
-import { GoSearch, GoX } from 'react-icons/go';
+import { GoX } from 'react-icons/go';
+import { GrSearch } from 'react-icons/gr';
+
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import useDebounce from '../../hooks/useDebounce';
 import './Search.css';
@@ -49,7 +51,7 @@ const Search = () => {
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         />
         <button className="search-icon" onClick={focus}>
-          <GoSearch />
+          <GrSearch />
         </button>
         <button className="x-icon" onClick={() => setSearchTerm('')}>
           <GoX />
