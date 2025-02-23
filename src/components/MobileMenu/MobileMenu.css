@@ -79,7 +79,7 @@
 /* Overlay styling */
 .mobile-menu__overlay {
   background: var(--background-color);
-  height: 100vh;
+  height: 100dvh;
   inset: 0;
   position: fixed;
   visibility: hidden;
@@ -116,7 +116,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
 }
 
