@@ -1,8 +1,5 @@
-.mobile-menu__checkbox {
-  display: none;
-}
-
 .mobile-menu__button {
+  background: transparent;
   cursor: pointer;
   padding: 1.5rem 0;
   user-select: none;
@@ -34,7 +31,6 @@
 
 .mobile-menu__icon::before {
   top: -8px;
-  visibility: visible;
   width: 28px;
 }
 
@@ -44,33 +40,18 @@
 }
 
 /* Toggle overlay & hamburger animation */
-.mobile-menu__checkbox:checked ~ .mobile-menu__overlay {
-  visibility: visible;
-}
-
-.mobile-menu__checkbox:checked ~ .mobile-menu__button {
-  position: absolute;
-  right: 2rem;
-  top: 1rem;
-}
-
-.mobile-menu__checkbox:checked ~ .mobile-menu__button:hover .mobile-menu__icon,
-.mobile-menu__checkbox:checked ~ .mobile-menu__button .mobile-menu__icon {
+.mobile-menu__icon.open {
   background: transparent;
 }
 
-.mobile-menu__checkbox:checked
-  ~ .mobile-menu__button
-  .mobile-menu__icon::before {
+.mobile-menu__icon.open::before {
   opacity: 1;
   top: -10px;
   transform: rotate(45deg) translate(7px, 7px);
   width: 30px;
 }
 
-.mobile-menu__checkbox:checked
-  ~ .mobile-menu__button
-  .mobile-menu__icon::after {
+.mobile-menu__icon.open::after {
   top: 10px;
   transform: rotate(-45deg) translate(7px, -7px);
   width: 30px;
@@ -108,8 +89,10 @@
 }
 
 /* When the menu is open, fade in the border */
-.mobile-menu__checkbox:checked ~ .mobile-menu__overlay::before {
+.mobile-menu__overlay.open,
+.open.mobile-menu__overlay::before {
   opacity: 1;
+  visibility: visible;
 }
 
 .mobile-menu__list {
