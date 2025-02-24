@@ -1,21 +1,23 @@
 import useTopRatedMovies from '../../hooks/useTopRatedMovies.js';
+import LazySwiper from '../../components/LazySwiper/LazySwiper.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
-  const { data, error, isLoading } = useTopRatedMovies();
+  const { data, isLoading } = useTopRatedMovies();
 
   return (
     <>
-      <h1>Movies</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      <ul>
-        {data?.length > 0 ? (
-          data.map((movie) => <li key={movie.id}>{movie.title}</li>)
-        ) : (
-          <p>No movies found</p>
-        )}
-      </ul>
+      <div>
+        {Array.from({ length: 10 }).map((_, i) => (
+          <LazySwiper
+            key={i}
+            index={i}
+            name={'Top Rated Movies'}
+            data={data}
+            isLoading={isLoading}
+          />
+        ))}
+      </div>
     </>
   );
 };
