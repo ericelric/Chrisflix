@@ -43,7 +43,7 @@ const Search = () => {
       <div className="search__container">
         <input
           ref={inputRef}
-          name="search"
+          name="search_chrisflix_global"
           type="search"
           placeholder="Search"
           className="search__input"

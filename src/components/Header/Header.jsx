@@ -30,10 +30,10 @@ const Header = () => {
 
       <nav className="header__right">
         <Search />
-        <NavLink to="/history" className="header__icon link">
+        <NavLink to="/history" className="header__icon link" title="Favorites">
           <GoHeart />
         </NavLink>
-        <NavLink to="/profile" className="header__icon link" data-text="Eric">
+        <NavLink to="/profile" className="header__icon link" title="My Profile">
           <GoSmiley />
         </NavLink>
         <MobileMenu />
