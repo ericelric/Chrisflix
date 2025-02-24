@@ -43,7 +43,7 @@
 .search__input:focus,
 .search__input:not(:placeholder-shown) {
   background-color: var(--background-color);
-  width: calc(100vw - 12.75rem);
+  width: calc(100vw - 13.25rem);
 }
 
 /* Gradient border on focus */

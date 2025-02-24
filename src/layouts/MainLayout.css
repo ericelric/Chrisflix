@@ -1,12 +1,19 @@
 #root {
   min-height: 100dvh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   overflow-x: hidden;
 }
 .main-wrapper {
+  margin-top: 5rem;
   padding: 1rem 1.5rem;
   width: 100vw;
+}
+
+@media (min-width: 600px) {
+  .main-wrapper {
+    padding: 1.5rem;
+  }
 }
 
 @media (min-width: 1200px) {

@@ -2,11 +2,12 @@
   display: flex;
   font-family: 'Poppins', serif;
   font-weight: 200;
-  height: 5rem;
+  height: 4.5rem;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 2;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .header__logo {
-  height: 2rem;
+  height: 2.25rem;
 }
 
 .header__link {
