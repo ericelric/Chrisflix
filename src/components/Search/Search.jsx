@@ -43,6 +43,7 @@ const Search = () => {
       <div className="search__container">
         <input
           ref={inputRef}
+          name="search"
           type="search"
           placeholder="Search"
           className="search__input"
