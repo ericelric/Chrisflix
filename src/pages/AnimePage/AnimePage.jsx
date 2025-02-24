@@ -6,7 +6,7 @@ const AnimePage = () => {
 
   return (
     <>
-      <h1>Movies</h1>
+      <h1>Anime</h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ul>

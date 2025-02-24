@@ -6,7 +6,7 @@ const TvShowsPage = () => {
 
   return (
     <>
-      <h1>Movies</h1>
+      <h1>TV Shows</h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ul>

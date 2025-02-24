@@ -10,6 +10,8 @@ import HomePage from './pages/HomePage/HomePage.jsx';
 import MoviesPage from './pages/MoviesPage/MoviesPage.jsx';
 import SearchResultsPage from './pages/SearchResultsPage/SearchResultsPage.jsx';
 import TvShowsPage from './pages/TvShowsPage/TvShowsPage.jsx';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage.jsx';
+import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,17 @@ const router = createBrowserRouter([
         element: <TvShowsPage />,
         errorElement: <ErrorPage />,
       },
-      { path: '/Anime', element: <AnimePage />, errorElement: <ErrorPage /> },
+      { path: '/anime', element: <AnimePage />, errorElement: <ErrorPage /> },
+      {
+        path: '/favorites',
+        element: <FavoritesPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/profile',
+        element: <ProfilePage />,
+        errorElement: <ErrorPage />,
+      },
       { path: '*', element: <ErrorPage /> },
     ],
   },

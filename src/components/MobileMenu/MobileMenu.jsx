@@ -45,7 +45,7 @@ const MobileMenu = () => {
           <div className="mobile-menu__spacing"></div>
 
           <NavLink
-            to="/history"
+            to="/favorites"
             className="mobile-menu__link"
             onClick={closeMenu}
           >

@@ -53,11 +53,10 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
 ## 📌 Future Enhancements
 
-- [ ] Mobile Menu
-- [ ] Player Page
 - [ ] Swiper.js integration
+- [ ] Player Page
 - [ ] User Authentication
-- [ ] Watchlist & Favorites
+- [ ] Favorites
 
 ---
 Chrisflix - A Netflix-inspired Trailer Streaming App<br>
