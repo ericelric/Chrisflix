@@ -31,15 +31,17 @@
 .swiper-slide-text {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 1rem;
   opacity: 0;
   transition: opacity 150ms ease-in;
 }
 
 /* Navigation Arrows */
+.swiper-button-disabled,
 .swiper-button-next:after,
 .swiper-button-prev:after {
+  display: none;
   color: var(--white);
   font-size: 2rem;
   font-weight: bold;
@@ -49,10 +51,6 @@
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
   transform: scale(1.25);
-}
-
-.swiper-button-disabled {
-  display: none;
 }
 
 /* Scrollbar */
@@ -69,6 +67,11 @@
 }
 
 @media (min-width: 600px) {
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: block;
+  }
+
   .swiper-slide img {
     aspect-ratio: 16 / 9;
   }
