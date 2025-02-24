@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/chrisflix-logo.svg';
 import Search from '../Search/Search.jsx';
-import { GoHeart } from 'react-icons/go';
+import { GoHeart, GoSmiley } from 'react-icons/go';
 
 import './Header.css';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
@@ -30,11 +30,11 @@ const Header = () => {
 
       <nav className="header__right">
         <Search />
-        <NavLink to="/history" className="header__link header__icon link">
+        <NavLink to="/history" className="header__icon link">
           <GoHeart />
         </NavLink>
-        <NavLink to="/profile" className="header__link link" data-text="Eric">
-          My Profile
+        <NavLink to="/profile" className="header__icon link" data-text="Eric">
+          <GoSmiley />
         </NavLink>
         <MobileMenu />
       </nav>

@@ -2,9 +2,9 @@
   display: flex;
   font-family: 'Poppins', serif;
   font-weight: 200;
-  height: 4rem;
+  height: 5rem;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -14,7 +14,7 @@
 .header__right {
   align-items: center;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .header__logo {
@@ -43,7 +43,9 @@
 }
 
 .header__icon {
+  display: none;
   font-size: 1.4rem;
+  width: 1.4rem;
 }
 
 /* prettier-ignore */
@@ -74,7 +76,8 @@
     height: 2.5rem;
   }
 
-  .header__link {
+  .header__link,
+  .header__icon {
     display: inline-flex;
   }
 }

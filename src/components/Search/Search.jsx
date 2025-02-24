@@ -38,22 +38,22 @@ const Search = () => {
   const focus = () => inputRef.current.focus();
 
   return (
-    <div className="search-wrapper">
-      <div className="search-dummy"></div>
-      <div className="search">
+    <div className="search">
+      <div className="search__dummy"></div>
+      <div className="search__container">
         <input
           ref={inputRef}
           type="search"
           placeholder="Search"
-          className="input"
+          className="search__input"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         />
-        <button className="search-icon" onClick={focus}>
+        <button className="search__icon" onClick={focus}>
           <GrSearch />
         </button>
-        <button className="x-icon" onClick={() => setSearchTerm('')}>
+        <button className="search__clear" onClick={() => setSearchTerm('')}>
           <GoX />
         </button>
       </div>
