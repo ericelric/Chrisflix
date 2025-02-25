@@ -20,12 +20,14 @@
 
 .swiper-slide-no-image {
   align-items: center;
-  background-color: #555;
+  background-color: #222;
+  color: var(--grey);
   display: flex;
   justify-content: center;
 }
 
 .swiper-slide-visible .swiper-slide-text,
+.swiper-slide-no-image,
 .swiper-slide-visible img {
   opacity: 1;
 }

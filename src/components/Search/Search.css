@@ -145,6 +145,6 @@ input[type='search']::-webkit-search-results-decoration {
   }
 
   .search__input::placeholder {
-    color: #a5a5a5;
+    color: var(--grey);
   }
 }

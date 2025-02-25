@@ -1,4 +1,4 @@
-import { GoImage } from 'react-icons/go';
+import { PiImage } from 'react-icons/pi';
 
 const SwiperImage = ({ backdrop_path, poster_path, title, name }) => {
   const imageUrl =
@@ -14,7 +14,7 @@ const SwiperImage = ({ backdrop_path, poster_path, title, name }) => {
     />
   ) : (
     <div className="swiper-slide-no-image">
-      <GoImage size={48} />
+      <PiImage size={48} />
     </div>
   );
 };
