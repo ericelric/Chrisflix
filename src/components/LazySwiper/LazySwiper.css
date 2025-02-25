@@ -1,6 +1,5 @@
 .swiper {
-  margin-bottom: 2.5rem;
-  padding-top: 1.125rem;
+  margin-bottom: 2rem;
   overflow: visible;
   font-weight: 200;
 }
@@ -28,13 +27,25 @@
   transition: transform 300ms ease;
 }
 
+.swiper-slide-text-wrapper {
+  position: absolute;
+  bottom: 12px;
+  display: flex;
+
+  align-items: center;
+  width: 100%;
+}
 .swiper-slide-text {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding: 0 1rem;
+  padding: 4px 7px;
   opacity: 0;
   transition: opacity 150ms ease-in;
+  backdrop-filter: blur(10px);
+  background-color: lch(0 0 0 / 0.33);
+  font-size: 0.875rem;
+  border-radius: 5px;
 }
 
 /* Navigation Arrows */
@@ -58,7 +69,7 @@
   --swiper-scrollbar-sides-offset: 0px;
   background: transparent;
   height: 2px;
-  top: 7px;
+  bottom: -2px;
 }
 
 .swiper-scrollbar-drag {

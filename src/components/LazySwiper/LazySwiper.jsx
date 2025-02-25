@@ -42,7 +42,9 @@ const LazySwiper = ({ name, data, isLoading }) => {
                 alt={`${title || name} Poster`}
                 loading="lazy"
               />
-              <div className="swiper-slide-text">{title || name}</div>
+              <div className="swiper-slide-text-wrapper">
+                <div className="swiper-slide-text">{title || name}</div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
