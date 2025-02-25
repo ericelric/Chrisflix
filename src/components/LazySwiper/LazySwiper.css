@@ -1,21 +1,20 @@
 .swiper {
-  margin-bottom: 2.5rem;
-  padding-top: 1.125rem;
-  overflow: visible;
   font-weight: 200;
+  margin-bottom: 2rem;
+  overflow: visible;
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 150ms ease, opacity 150ms ease;
-  box-shadow: rgb(0, 0, 0) 0px 10px 18px -10px;
-  border-radius: 5px;
-  margin-bottom: 0.75rem;
-  opacity: 0.2;
   aspect-ratio: 1;
+  border-radius: 5px;
+  box-shadow: var(--black) 0px 10px 18px -10px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 0.5rem;
   object-fit: cover;
+  opacity: 0.2;
+  transition: transform 150ms ease, opacity 150ms ease;
+  width: 100%;
 }
 
 .swiper-slide-visible .swiper-slide-text,
@@ -29,20 +28,27 @@
 }
 
 .swiper-slide-text {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0 1rem;
+  font-size: 0.875rem;
+  height: 1.2rem;
   opacity: 0;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  text-overflow: ellipsis;
   transition: opacity 150ms ease-in;
+  white-space: nowrap;
 }
 
 /* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-top-offset: calc(50% - 0.85rem);
+}
+
 .swiper-button-disabled,
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  display: none;
   color: var(--white);
+  display: none;
   font-size: 2rem;
   font-weight: bold;
   transition: transform 200ms ease;
@@ -57,13 +63,13 @@
 .swiper-scrollbar.swiper-scrollbar-horizontal {
   --swiper-scrollbar-sides-offset: 0px;
   background: transparent;
-  height: 2px;
-  top: 7px;
+  height: 1px;
+  top: -9px;
 }
 
 .swiper-scrollbar-drag {
   background: var(--font-color);
-  height: 2px;
+  height: 1px;
 }
 
 @media (min-width: 600px) {
