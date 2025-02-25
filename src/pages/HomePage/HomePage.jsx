@@ -17,6 +17,31 @@ const HomePage = () => {
 
   return (
     <>
+      <h1>Movies</h1>
+      <LazySwiper
+        name="Now Playing Movies"
+        data={nowPlayingMovies}
+        isLoading={isPlayingLoading}
+      />
+      <LazySwiper
+        name="Upcoming Movies"
+        data={upcomingMovies}
+        isLoading={isUpcomingLoading}
+      />
+      <LazySwiper
+        name="Popular Movies"
+        data={popularMovies}
+        isLoading={isPopularLoading}
+      />
+      <LazySwiper
+        name="Top Rated Movies"
+        data={topRatedMovies}
+        isLoading={isTopRatedLoading}
+      />
+
+      <div className="homepage__spacing"></div>
+
+      <h1>TV Shows</h1>
       <LazySwiper
         name="Now Playing Movies"
         data={nowPlayingMovies}
