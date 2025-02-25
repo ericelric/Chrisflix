@@ -8,6 +8,11 @@
   --red: #ff3838;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--background-color);
   color: var(--font-color);
@@ -25,13 +30,7 @@ h1 {
 h2 {
   font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 600px) {
-  h2 {
-    margin-bottom: 0;
-  }
+  margin-bottom: 1rem;
 }
 
 h3 {

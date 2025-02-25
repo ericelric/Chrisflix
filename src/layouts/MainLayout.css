@@ -1,11 +1,10 @@
 #root {
   min-height: 100dvh;
   display: grid;
-  grid-template-rows: 1fr auto;
-  overflow-x: hidden;
+  grid-template-rows: auto 1fr auto;
 }
 .main-wrapper {
-  margin-top: 5rem;
+  overflow-x: hidden;
   padding: 1rem 1.5rem;
   width: 100vw;
 }
