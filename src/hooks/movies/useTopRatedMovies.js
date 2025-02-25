@@ -1,4 +1,4 @@
-import useApi from './useApi';
+import useApi from '../useApi';
 
 const useTopRatedMovies = () =>
   useApi('/movie/top_rated?language=en-US&page=1');

@@ -1,12 +1,14 @@
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
+import SwiperImage from '../SwiperImage/SwiperImage';
 import SwiperPlaceholder from '../SwiperPlaceholder/SwiperPlaceholder';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
-import './LazySwiper.css';
+import './SwiperLazy.css';
 
 // Swiper configuration
 const getSwiperConfig = () => ({
@@ -26,23 +28,26 @@ const getSwiperConfig = () => ({
   },
 });
 
-const LazySwiper = ({ name, data, isLoading }) => {
+const SwiperLazy = ({ name, data, isLoading, error }) => {
   const swiperRef = useRef(null);
   const isVisible = useIntersectionObserver(swiperRef);
 
   return (
     <div ref={swiperRef}>
       <h2>{name}</h2>
-      {isVisible && !isLoading ? (
+      {isVisible && !isLoading && !error ? (
         <Swiper {...getSwiperConfig()}>
-          {data.map(({ id, backdrop_path, title, name }) => (
+          {data.map(({ id, backdrop_path, poster_path, title, name }) => (
             <SwiperSlide key={id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
-                alt={`${title || name} Poster`}
-                loading="lazy"
+              <SwiperImage
+                backdrop_path={backdrop_path}
+                poster_path={poster_path}
+                title={title}
+                name={name}
               />
-              <div className="swiper-slide-text">{title || name}</div>
+              <div className="swiper-slide-text">
+                {title || name || 'Media'}
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -53,4 +58,4 @@ const LazySwiper = ({ name, data, isLoading }) => {
   );
 };
 
-export default LazySwiper;
+export default SwiperLazy;

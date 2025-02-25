@@ -1,4 +1,4 @@
-import useApi from './useApi';
+import useApi from '../useApi';
 
 const usePopularMovies = () => useApi('/movie/popular?language=en-US&page=1');
 

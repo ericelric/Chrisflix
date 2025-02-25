@@ -1,4 +1,4 @@
-import useUpcomingMovies from '../../hooks/useUpcomingMovies.js';
+import useUpcomingMovies from '../../hooks/movies/useUpcomingMovies.js';
 import './MoviesPage.css';
 
 const MoviesPage = () => {

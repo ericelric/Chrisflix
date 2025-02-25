@@ -4,6 +4,7 @@
   overflow: visible;
 }
 
+.swiper-slide-no-image,
 .swiper-slide img {
   aspect-ratio: 1;
   border-radius: 5px;
@@ -17,11 +18,19 @@
   width: 100%;
 }
 
+.swiper-slide-no-image {
+  align-items: center;
+  background-color: #555;
+  display: flex;
+  justify-content: center;
+}
+
 .swiper-slide-visible .swiper-slide-text,
 .swiper-slide-visible img {
   opacity: 1;
 }
 
+.swiper-slide-no-image:hover,
 .swiper-slide:hover img {
   transform: scale(1.05);
   transition: transform 300ms ease;
@@ -78,6 +87,7 @@
     display: block;
   }
 
+  .swiper-slide-no-image,
   .swiper-slide img {
     aspect-ratio: 16 / 9;
   }

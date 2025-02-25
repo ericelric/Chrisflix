@@ -1,8 +1,8 @@
-import useTvShows from '../../hooks/useTvShows.js';
+import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows.js';
 import './TvShowsPage.css';
 
 const TvShowsPage = () => {
-  const { data, error, isLoading } = useTvShows();
+  const { data, error, isLoading } = usePopularTvShows();
 
   return (
     <>
