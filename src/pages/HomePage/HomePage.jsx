@@ -56,25 +56,25 @@ const HomePage = () => {
     <>
       <h1>Movies</h1>
       <LazySwiper
-        name="Now Playing Movies"
+        name="Now Playing"
         data={nowPlayingMovies}
         isLoading={isPlayingLoading}
         error={nowPlayingError}
       />
       <LazySwiper
-        name="Upcoming Movies"
+        name="Upcoming"
         data={upcomingMovies}
         isLoading={isUpcomingLoading}
         error={upcomingMoviesError}
       />
       <LazySwiper
-        name="Popular Movies"
+        name="Popular"
         data={popularMovies}
         isLoading={isPopularLoading}
         error={popularMoviesError}
       />
       <LazySwiper
-        name="Top Rated Movies"
+        name="Top Rated"
         data={topRatedMovies}
         isLoading={isTopRatedLoading}
         error={topRatedMoviesError}
@@ -85,25 +85,25 @@ const HomePage = () => {
       <h1>TV Shows</h1>
 
       <LazySwiper
-        name="Trending TV Shows"
+        name="Trending"
         data={trendingTvShows}
         isLoading={isTrendingTvLoading}
         error={trendingTvShowsError}
       />
       <LazySwiper
-        name="Upcoming TV Shows"
+        name="Upcoming"
         data={upcomingTvShows}
         isLoading={isUpcomingTvLoading}
         error={upcomingTvShowsError}
       />
       <LazySwiper
-        name="Popular TV Shows"
+        name="Popular"
         data={popularTvShows}
         isLoading={isPopularTvLoading}
         error={popularTvShowsError}
       />
       <LazySwiper
-        name="Top Rated TV Shows"
+        name="Top Rated"
         data={topRatedTvShows}
         isLoading={isTopRatedTvLoading}
         error={topRatedTvShowsError}
