@@ -1,6 +1,7 @@
 import usePopularAnimeMovies from '../../hooks/anime/usePopularAnimeMovies.js';
 import usePopularAnimeShows from '../../hooks/anime/usePopularAnimeShows.js';
 import useClassicAnime from '../../hooks/anime/useClassicAnime.js';
+import useStudioGhibliMovies from '../../hooks/anime/useStudioGhibliMovies.js';
 import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const AnimePage = () => {
@@ -19,6 +20,11 @@ const AnimePage = () => {
     isLoading: isClassicAnimeLoading,
     error: classicAnimeError,
   } = useClassicAnime();
+  const {
+    data: studioGhibliMovies,
+    isLoading: isStudioGhibliLoading,
+    error: studioGhibliError,
+  } = useStudioGhibliMovies();
 
   return (
     <>
@@ -40,6 +46,12 @@ const AnimePage = () => {
         data={classicAnime}
         isLoading={isClassicAnimeLoading}
         error={classicAnimeError}
+      />
+      <LazySwiper
+        name="Studio Ghibli"
+        data={studioGhibliMovies}
+        isLoading={isStudioGhibliLoading}
+        error={studioGhibliError}
       />
     </>
   );
