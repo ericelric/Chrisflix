@@ -12,6 +12,13 @@ const SearchResultsPage = () => {
   const { data, isLoading } = useSearch(query);
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
+  const [lastValidQuery, setLastValidQuery] = useState('');
+
+  useEffect(() => {
+    if (query) {
+      setLastValidQuery(query);
+    }
+  }, [query]);
 
   useEffect(() => {
     if (!query) return;
@@ -21,7 +28,7 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <h1>{`"${query}"`}</h1>
+      {lastValidQuery && <h1>{`${lastValidQuery}`}</h1>}
 
       {isLoading ? (
         <SearchPlaceholder />
@@ -58,7 +65,7 @@ const SearchResultsPage = () => {
                       poster_path={poster_path}
                       name={name}
                     />
-                    <div className="text-wrapper">
+                    <div className="search-results__text-wrapper">
                       <SwiperTitle name={name} />
                     </div>
                   </li>
