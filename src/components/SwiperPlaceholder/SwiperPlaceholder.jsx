@@ -1,12 +1,12 @@
+import PlaceholderItem from '../PlaceholderItem/PlaceholderItem';
 import './SwiperPlaceholder.css';
 
 const SwiperPlaceholder = () => {
   return (
-    <div className="swiper-placeholder-container">
+    <div className="swiper-placeholder__container">
       {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="swiper-placeholder-slide">
-          <div className="swiper-placeholder-image"></div>
-          <div className="swiper-placeholder-text"></div>
+        <div key={i} className="swiper-placeholder__slide">
+          <PlaceholderItem />
         </div>
       ))}
     </div>

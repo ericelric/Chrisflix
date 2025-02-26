@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import './SearchResultsPage.css';
+import SwiperImage from '../../components/SwiperImage/SwiperImage';
+import SwiperTitle from '../../components/SwiperTitle/SwiperTitle';
+import SearchPlaceholder from '../../components/SearchPlaceholder/SearchPlaceholder';
 
 const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
@@ -18,18 +21,27 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <h2>{`Search Results for "${query}"`}</h2>
+      <h1>{`"${query}"`}</h1>
 
       {isLoading ? (
-        <p>Loading...</p>
+        <SearchPlaceholder />
       ) : (
         <>
           {movies.length > 0 && (
             <div>
-              <h3>🎬 Movies</h3>
+              <h2 className="search-results__headline">Movies</h2>
               <ul className="search-results">
-                {movies.map((movie) => (
-                  <li key={movie.id}>{movie.title}</li>
+                {movies.map(({ id, backdrop_path, poster_path, title }) => (
+                  <li className="search-results__item" key={id}>
+                    <SwiperImage
+                      backdrop_path={backdrop_path}
+                      poster_path={poster_path}
+                      title={title}
+                    />
+                    <div className="search-results__text-wrapper">
+                      <SwiperTitle title={title} />
+                    </div>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -37,10 +49,19 @@ const SearchResultsPage = () => {
 
           {tvShows.length > 0 && (
             <div>
-              <h3>📺 TV Shows</h3>
+              <h2 className="search-results__headline">TV Shows</h2>
               <ul className="search-results">
-                {tvShows.map((show) => (
-                  <li key={show.id}>{show.name}</li>
+                {tvShows.map(({ id, backdrop_path, poster_path, name }) => (
+                  <li className="search-results__item" key={id}>
+                    <SwiperImage
+                      backdrop_path={backdrop_path}
+                      poster_path={poster_path}
+                      name={name}
+                    />
+                    <div className="text-wrapper">
+                      <SwiperTitle name={name} />
+                    </div>
+                  </li>
                 ))}
               </ul>
             </div>

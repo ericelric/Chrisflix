@@ -1,93 +1,50 @@
-.swiper-placeholder-container {
-  --placeholder-color: #222;
+.swiper-placeholder__container {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 2rem;
 }
 
-.swiper-placeholder-slide {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.swiper-placeholder-image {
-  animation: pulse 1.5s infinite ease-in-out;
-  aspect-ratio: 1;
-  background: var(--placeholder-color);
-  border-radius: 5px;
-  width: 100%;
-}
-
-.swiper-placeholder-text {
-  animation: pulse 1.5s infinite ease-in-out;
-  background: var(--placeholder-color);
-  border-radius: 5px;
-  height: 1.2rem;
-  width: 50%;
-  margin-left: 0.5rem;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
 /* Hide placeholders depending on screen size */
-.swiper-placeholder-slide:nth-child(n + 3) {
+.swiper-placeholder__slide:nth-child(n + 3) {
   display: none;
 }
 
-@media (min-width: 600px) {
-  .swiper-placeholder-image {
-    aspect-ratio: 16 / 9;
-  }
-}
-
 @media (min-width: 900px) {
-  .swiper-placeholder-slide:nth-child(n + 6) {
+  .swiper-placeholder__slide:nth-child(n + 6) {
     display: flex;
   }
 
-  .swiper-placeholder-container {
+  .swiper-placeholder__container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
-  .swiper-placeholder-slide:nth-child(n + 5) {
+  .swiper-placeholder__slide:nth-child(n + 5) {
     display: flex;
   }
 
-  .swiper-placeholder-container {
+  .swiper-placeholder__container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (min-width: 1500px) {
-  .swiper-placeholder-slide:nth-child(n + 4) {
+  .swiper-placeholder__slide:nth-child(n + 4) {
     display: flex;
   }
 
-  .swiper-placeholder-container {
+  .swiper-placeholder__container {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 @media (min-width: 2200px) {
-  .swiper-placeholder-slide:nth-child(n + 3) {
+  .swiper-placeholder__slide:nth-child(n + 3) {
     display: flex;
   }
 
-  .swiper-placeholder-container {
+  .swiper-placeholder__container {
     grid-template-columns: repeat(6, 1fr);
   }
 }

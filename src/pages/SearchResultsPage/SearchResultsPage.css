@@ -1,0 +1,48 @@
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 1rem;
+  margin-bottom: 4rem;
+}
+
+.search-results__headline {
+  font-family: 'Cairo', sans-serif;
+  font-size: 2rem;
+}
+.search-results__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results__text-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-results__text-wrapper .swiper-title {
+  position: absolute;
+}
+
+@media (min-width: 900px) {
+  .search-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-results {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .search-results {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 2200px) {
+  .search-results {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

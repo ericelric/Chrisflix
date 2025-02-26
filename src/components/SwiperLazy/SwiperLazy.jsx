@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import SwiperImage from '../SwiperImage/SwiperImage';
+import SwiperTitle from '../SwiperTitle/SwiperTitle';
 import SwiperPlaceholder from '../SwiperPlaceholder/SwiperPlaceholder';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
@@ -17,14 +18,14 @@ const getSwiperConfig = () => ({
   loop: false,
   watchSlidesProgress: true,
   navigation: true,
-  spaceBetween: 16,
+  spaceBetween: 10,
   slidesPerView: 2,
   breakpoints: {
-    600: { slidesPerView: 2 },
-    900: { slidesPerView: 3 },
-    1200: { slidesPerView: 4 },
-    1500: { slidesPerView: 5 },
-    2200: { slidesPerView: 6 },
+    600: { slidesPerView: 2, spaceBetween: 16 },
+    900: { slidesPerView: 3, spaceBetween: 16 },
+    1200: { slidesPerView: 4, spaceBetween: 16 },
+    1500: { slidesPerView: 5, spaceBetween: 16 },
+    2200: { slidesPerView: 6, spaceBetween: 16 },
   },
 });
 
@@ -45,9 +46,7 @@ const SwiperLazy = ({ name, data, isLoading, error }) => {
                 title={title}
                 name={name}
               />
-              <div className="swiper-slide-text">
-                {title || name || 'Media'}
-              </div>
+              <SwiperTitle title={title} name={name} />
             </SwiperSlide>
           ))}
         </Swiper>
