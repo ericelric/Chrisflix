@@ -1,21 +1,48 @@
-import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows.js';
-import './TvShowsPage.css';
+import useCurrentYearTvShows from '../../hooks/tvShows/useCurrentYearTvShows.js';
+import useKidsTvShows from '../../hooks/tvShows/useKidsTvShows.js';
+import useFreeTvShows from '../../hooks/tvShows/useFreeTvShows.js';
+
+import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const TvShowsPage = () => {
-  const { data, error, isLoading } = usePopularTvShows();
+  const {
+    data: currentTvShows,
+    isLoading: isCurrentTvLoading,
+    error: currentTvError,
+    currentYear,
+  } = useCurrentYearTvShows();
+  const {
+    data: freeTvShows,
+    isLoading: isFreeTvLoading,
+    error: freeTvError,
+  } = useFreeTvShows();
+  const {
+    data: kidsTvShows,
+    isLoading: isKidsTvLoading,
+    error: kidsTvError,
+  } = useKidsTvShows();
 
   return (
     <>
       <h1>TV Shows</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      <ul>
-        {data?.length > 0 ? (
-          data.map((movie) => <li key={movie.id}>{movie.name}</li>)
-        ) : (
-          <p>No movies found</p>
-        )}
-      </ul>
+      <LazySwiper
+        name={`New in ${currentYear}`}
+        data={currentTvShows}
+        isLoading={isCurrentTvLoading}
+        error={currentTvError}
+      />
+      <LazySwiper
+        name="Free To Watch"
+        data={freeTvShows}
+        isLoading={isFreeTvLoading}
+        error={freeTvError}
+      />
+      <LazySwiper
+        name="For Kids"
+        data={kidsTvShows}
+        isLoading={isKidsTvLoading}
+        error={kidsTvError}
+      />
     </>
   );
 };

@@ -1,21 +1,48 @@
-import useUpcomingMovies from '../../hooks/movies/useUpcomingMovies.js';
-import './MoviesPage.css';
+import useKidsMovies from '../../hooks/movies/useKidsMovies.js';
+import useClassicMovies from '../../hooks/movies/useClassicMovies.js';
+import useCurrentYearMovies from '../../hooks/movies/useCurrentYearMovies.js';
+
+import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const MoviesPage = () => {
-  const { data, error, isLoading } = useUpcomingMovies();
+  const {
+    data: kidsMovies,
+    isLoading: isKidsMoviesLoading,
+    error: kidsMoviesError,
+  } = useKidsMovies();
+  const {
+    data: classicMovies,
+    isLoading: isClassicMoviesLoading,
+    error: classicMoviesError,
+  } = useClassicMovies();
+  const {
+    data: currentYearMovies,
+    isLoading: isCurrentYearMoviesLoading,
+    error: currentYearError,
+    currentYear,
+  } = useCurrentYearMovies();
 
   return (
     <>
       <h1>Movies</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      <ul>
-        {data?.length > 0 ? (
-          data.map((movie) => <li key={movie.id}>{movie.title}</li>)
-        ) : (
-          <p>No movies found</p>
-        )}
-      </ul>
+      <LazySwiper
+        name={`New in ${currentYear}`}
+        data={currentYearMovies}
+        isLoading={isCurrentYearMoviesLoading}
+        error={currentYearError}
+      />
+      <LazySwiper
+        name="Classics"
+        data={classicMovies}
+        isLoading={isClassicMoviesLoading}
+        error={classicMoviesError}
+      />
+      <LazySwiper
+        name="For Kids"
+        data={kidsMovies}
+        isLoading={isKidsMoviesLoading}
+        error={kidsMoviesError}
+      />
     </>
   );
 };
