@@ -4,11 +4,11 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
 🚀 **Live Demo**: [Chrisflix on Vercel](https://chrisflix-react.vercel.app/)
 
-## 📸 Screenshots
+## Screenshots
 
 ### Coming soon
 
-## 🔥 Features
+## Features
 
 - **Fetch Movies & TV Shows** using the TMDB API
 - **Responsive UI** for a seamless experience on all devices
@@ -18,13 +18,13 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 - **React Router** for easy navigation
 - **Deployed on Vercel** for fast and simple hosting
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React (v19), React Router, Swiper.js, CSS
 - **API**: [TMDB API](https://www.themoviedb.org/)
 - **Hosting**: Vercel
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
 
@@ -54,7 +54,6 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 ## 📌 Future Enhancements
 
 - [ ] Genre selector
-- [ ] Player Page
 - [ ] User Authentication
 - [ ] Favorites
 
