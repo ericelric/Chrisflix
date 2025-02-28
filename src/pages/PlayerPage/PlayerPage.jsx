@@ -5,7 +5,7 @@ import CircularRating from '../../components/CircularRating/CircularRating';
 import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
 import useMediaDetails from '../../hooks/useMediaDetails';
 import useSimilarMedia from '../../hooks/useSimilarMedia';
-import formatRuntime from '../../../utils/FormatRuntime';
+import formatRuntime from '../../../utils/formatRuntime';
 import './PlayerPage.css';
 
 const PlayerPage = () => {
