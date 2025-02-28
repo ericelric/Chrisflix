@@ -7,7 +7,7 @@ import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows.js';
 import useTopRatedTvShows from '../../hooks/tvShows/useTopRatedTvShows.js';
 import useTrendingTvShows from '../../hooks/tvShows/useTrendingTvShows.js';
 
-import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -55,25 +55,25 @@ const HomePage = () => {
   return (
     <>
       <h1>Movies</h1>
-      <LazySwiper
+      <SwiperLazy
         name="Now Playing"
         data={nowPlayingMovies}
         isLoading={isPlayingLoading}
         error={nowPlayingError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Upcoming"
         data={upcomingMovies}
         isLoading={isUpcomingLoading}
         error={upcomingMoviesError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Popular"
         data={popularMovies}
         isLoading={isPopularLoading}
         error={popularMoviesError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Top Rated"
         data={topRatedMovies}
         isLoading={isTopRatedLoading}
@@ -84,25 +84,25 @@ const HomePage = () => {
 
       <h1>TV Shows</h1>
 
-      <LazySwiper
+      <SwiperLazy
         name="Trending"
         data={trendingTvShows}
         isLoading={isTrendingTvLoading}
         error={trendingTvShowsError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Upcoming"
         data={upcomingTvShows}
         isLoading={isUpcomingTvLoading}
         error={upcomingTvShowsError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Popular"
         data={popularTvShows}
         isLoading={isPopularTvLoading}
         error={popularTvShowsError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Top Rated"
         data={topRatedTvShows}
         isLoading={isTopRatedTvLoading}

@@ -1,0 +1,36 @@
+.circular-rating {
+  display: inline-block;
+  font-size: 1.25rem;
+  height: 3.5em;
+  position: absolute;
+  right: 0.5rem;
+  text-align: center;
+  width: 3.5em;
+}
+
+.circular-rating__progress {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  stroke-width: 5;
+  top: 0;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  width: 100%;
+}
+
+.circular-rating__background {
+  fill: transparent;
+  stroke: var(--background-primary);
+  stroke-width: 15;
+}
+
+.circular-rating__text {
+  color: var(--text-primary);
+  font-size: 1em;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

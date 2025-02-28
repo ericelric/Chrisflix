@@ -2,7 +2,7 @@ import usePopularAnimeMovies from '../../hooks/anime/usePopularAnimeMovies.js';
 import usePopularAnimeShows from '../../hooks/anime/usePopularAnimeShows.js';
 import useClassicAnime from '../../hooks/anime/useClassicAnime.js';
 import useStudioGhibliMovies from '../../hooks/anime/useStudioGhibliMovies.js';
-import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const AnimePage = () => {
   const {
@@ -29,25 +29,25 @@ const AnimePage = () => {
   return (
     <>
       <h1>Anime</h1>
-      <LazySwiper
+      <SwiperLazy
         name="Popular Anime Movies"
         data={animeMovies}
         isLoading={isAnimeMoviesLoading}
         error={animeMoviesError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Popular Anime Shows"
         data={animeShows}
         isLoading={isAnimeShowsLoading}
         error={animeShowsError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Classics"
         data={classicAnime}
         isLoading={isClassicAnimeLoading}
         error={classicAnimeError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Studio Ghibli"
         data={studioGhibliMovies}
         isLoading={isStudioGhibliLoading}

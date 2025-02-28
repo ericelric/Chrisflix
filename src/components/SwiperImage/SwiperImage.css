@@ -1,10 +1,10 @@
 .swiper-image {
   align-items: center;
   aspect-ratio: 1;
-  background-color: #222;
+  background-color: var(--background-secondary);
   border-radius: 5px;
   box-shadow: var(--black) 0px 10px 18px -10px;
-  color: var(--grey);
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   justify-content: center;

@@ -8,14 +8,14 @@
 .placeholder__image {
   animation: pulse 1.5s infinite ease-in-out;
   aspect-ratio: 1;
-  background: var(--placeholder-color);
+  background: var(--background-secondary);
   border-radius: 5px;
   width: 100%;
 }
 
 .placeholder__text {
   animation: pulse 1.5s infinite ease-in-out;
-  background: var(--placeholder-color);
+  background: var(--background-secondary);
   border-radius: 5px;
   height: 1.2rem;
   width: 50%;

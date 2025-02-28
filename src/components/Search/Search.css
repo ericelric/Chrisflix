@@ -22,7 +22,7 @@
   background-color: var(--black);
   border-radius: 3em;
   border: solid 3px transparent;
-  color: var(--font-color);
+  color: var(--text-primary);
   font-size: 1em;
   outline: none;
   padding: 0.375em 0.75em;
@@ -32,7 +32,7 @@
 }
 
 .search__input::placeholder {
-  color: var(--background-color);
+  color: var(--background-primary);
 }
 
 .search__input:focus::placeholder {
@@ -42,13 +42,16 @@
 /* Expanded input when focused or has value */
 .search__input:focus,
 .search__input:not(:placeholder-shown) {
-  background-color: var(--background-color);
+  background-color: var(--background-primary);
   width: calc(100vw - 13.25rem);
 }
 
 /* Gradient border on focus */
 .search__input:focus-visible {
-  background: linear-gradient(var(--background-color), var(--background-color))
+  background: linear-gradient(
+        var(--background-primary),
+        var(--background-primary)
+      )
       padding-box,
     linear-gradient(
         45deg,
@@ -66,7 +69,7 @@
 .search__icon,
 .search__clear {
   background-color: unset;
-  color: var(--font-color);
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 1.5em;
   height: 1em;
@@ -120,7 +123,7 @@ input[type='search']::-webkit-search-results-decoration {
   }
 
   .search__input {
-    background-color: var(--background-color);
+    background-color: var(--background-primary);
   }
 
   .search__input:focus,
@@ -145,6 +148,6 @@ input[type='search']::-webkit-search-results-decoration {
   }
 
   .search__input::placeholder {
-    color: var(--grey);
+    color: var(--text-secondary);
   }
 }

@@ -41,7 +41,7 @@
 }
 
 .swiper-scrollbar-drag {
-  background: var(--font-color);
+  background: var(--text-primary);
   height: 1px;
 }
 

@@ -1,6 +1,6 @@
 .search-placeholder__headline {
   animation: pulse 1.5s infinite ease-in-out;
-  background: var(--placeholder-color);
+  background: var(--background-secondary);
   border-radius: 5px;
   height: 2.4rem;
   margin-bottom: 1rem;

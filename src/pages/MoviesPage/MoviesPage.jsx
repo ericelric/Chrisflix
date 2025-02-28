@@ -2,7 +2,7 @@ import useKidsMovies from '../../hooks/movies/useKidsMovies.js';
 import useClassicMovies from '../../hooks/movies/useClassicMovies.js';
 import useCurrentYearMovies from '../../hooks/movies/useCurrentYearMovies.js';
 
-import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const MoviesPage = () => {
   const {
@@ -25,19 +25,19 @@ const MoviesPage = () => {
   return (
     <>
       <h1>Movies</h1>
-      <LazySwiper
+      <SwiperLazy
         name={`New in ${currentYear}`}
         data={currentYearMovies}
         isLoading={isCurrentYearMoviesLoading}
         error={currentYearError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Classics"
         data={classicMovies}
         isLoading={isClassicMoviesLoading}
         error={classicMoviesError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="For Kids"
         data={kidsMovies}
         isLoading={isKidsMoviesLoading}

@@ -2,7 +2,7 @@ import useCurrentYearTvShows from '../../hooks/tvShows/useCurrentYearTvShows.js'
 import useKidsTvShows from '../../hooks/tvShows/useKidsTvShows.js';
 import useFreeTvShows from '../../hooks/tvShows/useFreeTvShows.js';
 
-import LazySwiper from '../../components/SwiperLazy/SwiperLazy.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
 
 const TvShowsPage = () => {
   const {
@@ -25,19 +25,19 @@ const TvShowsPage = () => {
   return (
     <>
       <h1>TV Shows</h1>
-      <LazySwiper
+      <SwiperLazy
         name={`New in ${currentYear}`}
         data={currentTvShows}
         isLoading={isCurrentTvLoading}
         error={currentTvError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="Free To Watch"
         data={freeTvShows}
         isLoading={isFreeTvLoading}
         error={freeTvError}
       />
-      <LazySwiper
+      <SwiperLazy
         name="For Kids"
         data={kidsTvShows}
         isLoading={isKidsTvLoading}

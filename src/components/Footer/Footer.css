@@ -1,6 +1,6 @@
 footer {
   align-items: center;
-  color: var(--grey);
+  color: var(--text-secondary);
   display: flex;
   font-size: 0.875rem;
   height: 2rem;

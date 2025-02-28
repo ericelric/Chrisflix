@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import './SearchResultsPage.css';
 import SwiperImage from '../../components/SwiperImage/SwiperImage';
@@ -39,7 +39,11 @@ const SearchResultsPage = () => {
               <h2 className="search-results__headline">Movies</h2>
               <ul className="search-results">
                 {movies.map(({ id, backdrop_path, poster_path, title }) => (
-                  <li className="search-results__item" key={id}>
+                  <Link
+                    to={`/player/${id}?media_type=movie`}
+                    className="search-results__item"
+                    key={id}
+                  >
                     <SwiperImage
                       backdrop_path={backdrop_path}
                       poster_path={poster_path}
@@ -48,7 +52,7 @@ const SearchResultsPage = () => {
                     <div className="search-results__text-wrapper">
                       <SwiperTitle title={title} />
                     </div>
-                  </li>
+                  </Link>
                 ))}
               </ul>
             </div>
@@ -59,7 +63,11 @@ const SearchResultsPage = () => {
               <h2 className="search-results__headline">TV Shows</h2>
               <ul className="search-results">
                 {tvShows.map(({ id, backdrop_path, poster_path, name }) => (
-                  <li className="search-results__item" key={id}>
+                  <Link
+                    to={`/player/${id}?media_type=tv`}
+                    className="search-results__item"
+                    key={id}
+                  >
                     <SwiperImage
                       backdrop_path={backdrop_path}
                       poster_path={poster_path}
@@ -68,7 +76,7 @@ const SearchResultsPage = () => {
                     <div className="search-results__text-wrapper">
                       <SwiperTitle name={name} />
                     </div>
-                  </li>
+                  </Link>
                 ))}
               </ul>
             </div>

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 import SwiperImage from '../SwiperImage/SwiperImage';
 import SwiperTitle from '../SwiperTitle/SwiperTitle';
 import SwiperPlaceholder from '../SwiperPlaceholder/SwiperPlaceholder';
@@ -40,13 +41,19 @@ const SwiperLazy = ({ name, data, isLoading, error }) => {
         <Swiper {...getSwiperConfig()}>
           {data.map(({ id, backdrop_path, poster_path, title, name }) => (
             <SwiperSlide key={id}>
-              <SwiperImage
-                backdrop_path={backdrop_path}
-                poster_path={poster_path}
-                title={title}
-                name={name}
-              />
-              <SwiperTitle title={title} name={name} />
+              <Link
+                to={`/player/${id}?media_type=${
+                  title !== undefined ? 'movie' : 'tv'
+                }`}
+              >
+                <SwiperImage
+                  backdrop_path={backdrop_path}
+                  poster_path={poster_path}
+                  title={title}
+                  name={name}
+                />
+                <SwiperTitle title={title} name={name} />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

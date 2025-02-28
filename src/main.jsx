@@ -12,6 +12,7 @@ import SearchResultsPage from './pages/SearchResultsPage/SearchResultsPage.jsx';
 import TvShowsPage from './pages/TvShowsPage/TvShowsPage.jsx';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage.jsx';
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
+import PlayerPage from './pages/PlayerPage/PlayerPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <ProfilePage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/player/:id',
+        element: <PlayerPage />,
         errorElement: <ErrorPage />,
       },
       { path: '*', element: <ErrorPage /> },

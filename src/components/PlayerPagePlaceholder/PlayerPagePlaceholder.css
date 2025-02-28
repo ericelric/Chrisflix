@@ -1,0 +1,69 @@
+.player-page-placeholder__headline,
+.player-page-placeholder__genres,
+.player-page-placeholder__player,
+.player-page-placeholder__info {
+  animation: pulse 1.5s infinite ease-in-out;
+  background-color: var(--background-secondary);
+  border-radius: 1rem;
+}
+
+.player-page-placeholder__headline {
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  height: 2.4rem;
+  width: 15rem;
+}
+
+.player-page-placeholder__genres {
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  height: 1.2rem;
+  width: 10rem;
+}
+
+.player-page-placeholder__content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+
+.player-page-placeholder__player {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+}
+
+.player-page-placeholder__info {
+  min-height: 300px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .player-page-placeholder__headline {
+    height: 3rem;
+    width: 20rem;
+  }
+
+  .player-page-placeholder__genres {
+    width: 15rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .player-page-placeholder__content {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
