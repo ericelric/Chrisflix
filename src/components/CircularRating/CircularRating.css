@@ -6,6 +6,8 @@
   position: relative;
   text-align: center;
   width: 3.5em;
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
 }
 
 .circular-rating__progress {
@@ -27,7 +29,7 @@
 }
 
 .circular-rating__text {
-  color: var(--text-primary);
+  color: inherit;
   font-size: 1em;
   font-weight: bold;
   left: 50%;

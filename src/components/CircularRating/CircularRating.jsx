@@ -5,16 +5,16 @@ const CircularRating = ({ rating = 0, maxRating = 10 }) => {
   const percentage = (rating / maxRating) * 100;
 
   // Calculate stroke-dasharray and stroke-dashoffset based on the percentage
-  const radius = 40;
+  const radius = 42.5;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   const getColor = (rating) => {
-    if (rating < 0.5) return { stroke: '#1a1a1a', bg: '#2d2d2d' };
-    if (rating < 5) return { stroke: '#D32F2F', bg: '#382e2d' };
-    if (rating < 6) return { stroke: '#FFA500', bg: '#3a352d' };
-    if (rating < 7) return { stroke: '#ffd700', bg: '#3a382e' };
-    return { stroke: '#22d07a', bg: '#282f2a' };
+    if (rating < 0.5) return { stroke: '#1a1a1a', bg: '#00000000' };
+    if (rating < 5) return { stroke: '#D32F2F', bg: '#5412121a' };
+    if (rating < 6) return { stroke: '#FFA500', bg: '#6642001a' };
+    if (rating < 7) return { stroke: '#ffd700', bg: '#332b001a' };
+    return { stroke: '#22d07a', bg: '#0e58331a' };
   };
 
   return (
