@@ -81,7 +81,9 @@ const PlayerPage = () => {
               <strong>{data.original_title || data.original_name}</strong> (OT)
             </div>
             <div className="player-page__rating">
-              <CircularRating rating={data.vote_average} />
+              <div className="player-page__circle">
+                <CircularRating rating={data.vote_average} />
+              </div>
             </div>
           </div>
 

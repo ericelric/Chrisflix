@@ -3,6 +3,7 @@ import useClassicMovies from '../../hooks/movies/useClassicMovies.js';
 import useCurrentYearMovies from '../../hooks/movies/useCurrentYearMovies.js';
 
 import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
+import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
 
 const MoviesPage = () => {
   const {
@@ -24,6 +25,7 @@ const MoviesPage = () => {
 
   return (
     <>
+      <HeroBanner bannerType={'movie'} />
       <h1>Movies</h1>
       <SwiperLazy
         name={`New in ${currentYear}`}

@@ -10,11 +10,11 @@ const CircularRating = ({ rating = 0, maxRating = 10 }) => {
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   const getColor = (rating) => {
-    if (rating < 0.5) return { stroke: '#1a1a1a', bg: '#00000000' };
-    if (rating < 5) return { stroke: '#D32F2F', bg: '#D32F2F10' };
-    if (rating < 6) return { stroke: '#FFA500', bg: '#FFA50010' };
-    if (rating < 7) return { stroke: '#ffd700', bg: '#ffd70010' };
-    return { stroke: '#22d07a', bg: '#22d07a10' };
+    if (rating < 0.5) return { stroke: '#1a1a1a', bg: '#2d2d2d' };
+    if (rating < 5) return { stroke: '#D32F2F', bg: '#382e2d' };
+    if (rating < 6) return { stroke: '#FFA500', bg: '#3a352d' };
+    if (rating < 7) return { stroke: '#ffd700', bg: '#3a382e' };
+    return { stroke: '#22d07a', bg: '#282f2a' };
   };
 
   return (
@@ -25,6 +25,9 @@ const CircularRating = ({ rating = 0, maxRating = 10 }) => {
           cx="50"
           cy="50"
           r={radius}
+          style={{
+            fill: getColor(rating).bg,
+          }}
         />
         <circle
           className="circular-rating__progress"
@@ -34,7 +37,6 @@ const CircularRating = ({ rating = 0, maxRating = 10 }) => {
           style={{
             strokeDasharray: circumference,
             strokeDashoffset: strokeDashoffset,
-            fill: getColor(rating).bg,
             stroke: getColor(rating).stroke,
           }}
         />

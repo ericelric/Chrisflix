@@ -3,6 +3,7 @@ import useKidsTvShows from '../../hooks/tvShows/useKidsTvShows.js';
 import useFreeTvShows from '../../hooks/tvShows/useFreeTvShows.js';
 
 import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
+import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
 
 const TvShowsPage = () => {
   const {
@@ -24,6 +25,7 @@ const TvShowsPage = () => {
 
   return (
     <>
+      <HeroBanner bannerType={'tv'} />
       <h1>TV Shows</h1>
       <SwiperLazy
         name={`New in ${currentYear}`}

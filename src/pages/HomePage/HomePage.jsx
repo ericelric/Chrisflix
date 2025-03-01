@@ -8,6 +8,7 @@ import useTopRatedTvShows from '../../hooks/tvShows/useTopRatedTvShows.js';
 import useTrendingTvShows from '../../hooks/tvShows/useTrendingTvShows.js';
 
 import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
+import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -54,6 +55,7 @@ const HomePage = () => {
 
   return (
     <>
+      <HeroBanner bannerType={'combined'} />
       <h1>Movies</h1>
       <SwiperLazy
         name="Now Playing"

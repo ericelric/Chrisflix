@@ -2,7 +2,9 @@ import usePopularAnimeMovies from '../../hooks/anime/usePopularAnimeMovies.js';
 import usePopularAnimeShows from '../../hooks/anime/usePopularAnimeShows.js';
 import useClassicAnime from '../../hooks/anime/useClassicAnime.js';
 import useStudioGhibliMovies from '../../hooks/anime/useStudioGhibliMovies.js';
+
 import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
+import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
 
 const AnimePage = () => {
   const {
@@ -28,6 +30,7 @@ const AnimePage = () => {
 
   return (
     <>
+      <HeroBanner bannerType={'anime'} />
       <h1>Anime</h1>
       <SwiperLazy
         name="Popular Anime Movies"

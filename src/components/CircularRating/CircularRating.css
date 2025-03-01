@@ -1,9 +1,9 @@
 .circular-rating {
   display: inline-block;
-  font-size: 1.25rem;
+  flex: none;
+  font-size: 1em;
   height: 3.5em;
-  position: absolute;
-  right: 0.5rem;
+  position: relative;
   text-align: center;
   width: 3.5em;
 }
@@ -17,6 +17,7 @@
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
   width: 100%;
+  fill: transparent;
 }
 
 .circular-rating__background {

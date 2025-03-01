@@ -23,12 +23,16 @@ h1 {
   font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 h2 {
   font-size: 1.125rem;
   font-weight: 400;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 h3 {
@@ -56,6 +60,7 @@ a:hover {
   display: inline-block;
   position: relative;
 }
+
 .link::after {
   background-color: var(--white);
   bottom: -2px;
@@ -68,6 +73,7 @@ a:hover {
   transition: all 150ms;
   width: 0;
 }
+
 .link:hover::after {
   left: 0;
   width: 100%;

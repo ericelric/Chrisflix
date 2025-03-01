@@ -42,9 +42,15 @@
 }
 
 .player-page__rating {
+  font-size: 1.25rem;
   padding-right: 5rem;
   padding-top: 1rem;
   position: relative;
+}
+
+.player-page__circle {
+  position: absolute;
+  right: 0.5rem;
 }
 
 .player-page__section-title {
