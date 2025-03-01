@@ -1,4 +1,10 @@
 .homepage__spacing {
-  padding: 2rem 0;
+  padding: 1rem 0;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .homepage__spacing {
+    padding: 1.5rem 0;
+  }
 }
