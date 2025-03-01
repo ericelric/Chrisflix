@@ -35,7 +35,7 @@ const MobileMenu = () => {
             TV Shows
           </NavLink>
           <NavLink
-            to="/Anime"
+            to="/anime"
             className="mobile-menu__link mobile-menu__link--no-border"
             onClick={closeMenu}
           >

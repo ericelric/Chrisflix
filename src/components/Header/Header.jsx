@@ -22,7 +22,7 @@ const Header = () => {
         >
           TV Shows
         </NavLink>
-        <NavLink to="/Anime" className="header__link link" data-text="Anime">
+        <NavLink to="/anime" className="header__link link" data-text="Anime">
           Anime
         </NavLink>
       </nav>
