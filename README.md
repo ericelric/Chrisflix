@@ -1,5 +1,10 @@
-# 🎬 Chrisflix - A Netflix-inspired Trailer Streaming App
 
+<div align="center" dir="auto">
+   <a href="https://chrisflix-react.vercel.app" rel="nofollow"><img width="250" alt="logo" src="https://github.com/user-attachments/assets/f2260462-9b10-41b1-a8d8-ae008dd332e7"></a><br>
+</div>
+
+<h1 align="center">Chrisflix - A Netflix-inspired Trailer Streaming App</h1>
+ 
 Chrisflix is a **Netflix-inspired** trailer streaming application built with **React**. It leverages the **TMDB API** to display the latest, upcoming, and trending movies and TV shows. Users can explore content through interactive sliders, search for their favorite titles in real-time and watch trailers on a dedicated player page.
 
 🚀 **Live Demo**: [Chrisflix on Vercel](https://chrisflix-react.vercel.app/)
