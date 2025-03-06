@@ -9,9 +9,7 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
 🚀 **Live Demo**: [Chrisflix on Vercel](https://chrisflix-react.vercel.app/)
 
-## Screenshots
-
-### Coming soon
+<img width="1898" alt="Screenshot 2025-03-06 at 17 00 13" src="https://github.com/user-attachments/assets/9fdc709e-1d95-4851-913c-2b6d9acfaee8" />
 
 ## Features
 
@@ -62,6 +60,11 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 - [ ] Genre selector
 - [ ] User Authentication
 - [ ] Favorites
+
+## Screenshots
+
+<img width="1898" alt="Screenshot 2025-03-06 at 17 00 23" src="https://github.com/user-attachments/assets/30d4ace4-a484-407c-801f-f171645de178" />
+<img width="1898" alt="mobile" src="https://github.com/user-attachments/assets/2f4e8e86-51cf-43ee-b8de-5f80c1e60adc" />
 
 ---
 Chrisflix - A Netflix-inspired Trailer Streaming App<br>
