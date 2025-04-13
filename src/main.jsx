@@ -35,27 +35,6 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       { path: '/anime', element: <AnimePage />, errorElement: <ErrorPage /> },
-
-      // 🔒 PROTECTED ROUTES
-      {
-        path: '/favorites',
-        element: (
-          <ProtectedRoute>
-            <FavoritesPage />
-          </ProtectedRoute>
-        ),
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: '/profile',
-        element: (
-          <ProtectedRoute>
-            <ProfilePage />
-          </ProtectedRoute>
-        ),
-        errorElement: <ErrorPage />,
-      },
-
       {
         path: '/player/:id',
         element: <PlayerPage />,
@@ -77,6 +56,26 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       { path: '*', element: <ErrorPage /> },
+
+      // PROTECTED ROUTES
+      {
+        path: '/favorites',
+        element: (
+          <ProtectedRoute>
+            <FavoritesPage />
+          </ProtectedRoute>
+        ),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/profile',
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
+        errorElement: <ErrorPage />,
+      },
     ],
   },
 ]);

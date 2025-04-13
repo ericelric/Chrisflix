@@ -1,9 +1,12 @@
 import './LoginSignUpForm.css';
+import Button from '../Button/Button';
 
 const LoginSignUpForm = ({
   isSignupMode,
   isLogInMode,
   isResetMode,
+  username,
+  setUsername,
   email,
   setEmail,
   password,
@@ -23,6 +26,23 @@ const LoginSignUpForm = ({
           {isResetMode ? 'Reset Password' : isSignupMode ? 'Sign Up' : 'Log In'}
         </h1>
 
+        {isSignupMode && (
+          <div className="signup__input-group">
+            <input
+              id="username"
+              className="signup__input"
+              type="text"
+              name="username"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder=" "
+            />
+            <label className="signup__label" htmlFor="username">
+              Username
+            </label>
+          </div>
+        )}
         <div className="signup__input-group">
           <input
             id="email"
@@ -78,7 +98,7 @@ const LoginSignUpForm = ({
         )}
 
         <div className="signup__actions">
-          <button disabled={isLoading} className="signup__button" type="submit">
+          <Button disabled={isLoading} type="submit">
             {isLoading
               ? isResetMode
                 ? 'Sending Reset Link...'
@@ -90,7 +110,7 @@ const LoginSignUpForm = ({
               : isSignupMode
               ? 'Sign Up'
               : 'Log In'}
-          </button>
+          </Button>
         </div>
 
         <hr className="signup__divider" />

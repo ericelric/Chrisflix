@@ -19,6 +19,7 @@ const LogInSignUpPage = () => {
     location.pathname === '/reset-password'
   );
 
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
@@ -55,18 +56,24 @@ const LogInSignUpPage = () => {
     try {
       setIsLoading(true);
       if (isSignupMode) {
-        await signup(email, password);
-        toast.success('Account created successfully!');
+        await signup(email, password, username);
+        toast.success('Account created successfully.');
         navigate('/');
       } else {
         await login(email, password);
-        toast.success('Logged in successfully!');
+        toast.success('Logged in successfully.');
         navigate('/');
       }
     } catch (err) {
-      toast.error(
-        `Failed to ${isSignupMode ? 'sign up' : 'log in'}. ${err.message}`
-      );
+      if (err.code === 'auth/invalid-credential') {
+        toast.error(
+          `Login failed. Please double-check your email and password.`
+        );
+      } else {
+        toast.error(
+          `Failed to ${isSignupMode ? 'sign up' : 'log in'}. ${err.message}`
+        );
+      }
     } finally {
       setIsLoading(false);
     }
@@ -95,6 +102,8 @@ const LogInSignUpPage = () => {
       isLogInMode={isLogInMode}
       isResetMode={isResetMode}
       isLoading={isLoading}
+      username={username}
+      setUsername={setUsername}
       email={email}
       setEmail={setEmail}
       password={password}
