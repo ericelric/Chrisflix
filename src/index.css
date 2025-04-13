@@ -8,6 +8,7 @@
   --black: #000;
   --white: #fff;
   --red: #ff3838;
+  --shadow: var(--black) 0px 10px 18px -10px;
 }
 
 body {

@@ -21,7 +21,7 @@ const LoginSignUpForm = ({
 }) => {
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <div className="signup__container">
+      <div className="signup__card">
         <h1 className="signup__title">
           {isResetMode ? 'Reset Password' : isSignupMode ? 'Sign Up' : 'Log In'}
         </h1>

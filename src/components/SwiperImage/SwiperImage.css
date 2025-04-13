@@ -3,7 +3,7 @@
   aspect-ratio: 1;
   background-color: var(--background-secondary);
   border-radius: 5px;
-  box-shadow: var(--black) 0px 10px 18px -10px;
+  box-shadow: var(--shadow);
   color: var(--text-secondary);
   cursor: pointer;
   display: flex;

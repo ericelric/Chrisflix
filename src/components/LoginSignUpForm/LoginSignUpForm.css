@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.signup__container {
+.signup__card {
   --gradient-border-size: 2px;
   background-color: var(--background-secondary);
   border-radius: calc(1rem - var(--gradient-border-size));
@@ -12,10 +12,10 @@
   width: 380px;
 }
 
-.signup__container::before {
+.signup__card::before {
   border-radius: 1rem;
   bottom: calc(-1 * var(--gradient-border-size));
-  box-shadow: var(--black) 0px 10px 18px -10px;
+  box-shadow: var(--shadow);
   content: '';
   left: calc(-1 * var(--gradient-border-size));
   position: absolute;
