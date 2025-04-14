@@ -56,31 +56,6 @@
   text-align: center;
 }
 
-.hero-banner__button {
-  align-items: center;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  border: 2px solid var(--text-primary);
-  color: var(--text-primary);
-  cursor: pointer;
-  display: flex;
-  font-size: 1rem;
-  padding: 0.6875em 1.125em;
-  text-decoration: none;
-  transition: background-color 250ms;
-}
-
-.hero-banner__button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: var(--white);
-  color: var(--white);
-}
-
-.hero-banner__play-icon {
-  margin-right: 0.5rem;
-}
-
 .hero-banner__description {
   display: none;
 }

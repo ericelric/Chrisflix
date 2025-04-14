@@ -2,8 +2,7 @@ import { useMemo } from 'react';
 import CircularRating from '../CircularRating/CircularRating';
 import useTopRatedNewReleases from '../../hooks/useTopRatedNewReleases';
 import './HeroBanner.css';
-import { Link } from 'react-router-dom';
-import { FaPlay } from 'react-icons/fa';
+import LinkButton from '../LinkButton/LinkButton';
 
 const HeroBanner = ({ bannerType = 'combined' }) => {
   const { data, isLoading, error } = useTopRatedNewReleases(bannerType);
@@ -34,17 +33,14 @@ const HeroBanner = ({ bannerType = 'combined' }) => {
         </h2>
 
         <div className="hero-banner__description">{randomItem.overview}</div>
-        <Link
-          to={`/player/${randomItem.id}?media_type=${
+        <LinkButton
+          link={`/player/${randomItem.id}?media_type=${
             randomItem.title !== undefined ? 'movie' : 'tv'
           }`}
-          className="hero-banner__button"
+          icon={true}
         >
-          <span className="hero-banner__play-icon">
-            <FaPlay />
-          </span>
           Play Trailer
-        </Link>
+        </LinkButton>
       </div>
 
       <div className="hero-banner__overlay"></div>

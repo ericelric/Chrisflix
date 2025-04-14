@@ -1,4 +1,5 @@
 .button {
+  --hover-background: #575757;
   align-items: center;
   background-color: var(--text-primary);
   border-radius: 5px;
@@ -15,13 +16,55 @@
 }
 
 .button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--hover-background);
   border-color: var(--white);
   color: var(--white);
   font-weight: 700;
 }
 
+.button:focus-visible {
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  border-radius: 5px;
+  border: solid 2px transparent;
+  color: var(--text-primary);
+  font-weight: 700;
+  outline: none;
+  background-image: linear-gradient(
+      var(--hover-background),
+      var(--hover-background)
+    ),
+    linear-gradient(
+      45deg,
+      rgba(255, 172, 94, 1) 0%,
+      rgba(207, 23, 148, 1) 12%,
+      rgb(179 26 200) 34%,
+      rgb(135 22 255) 50%,
+      rgb(75 23 255) 68%,
+      rgba(6, 216, 249, 1) 100%
+    );
+}
+
 .button--secondary {
   background-color: var(--background-secondary);
   color: var(--text-primary);
+}
+
+.button--frost {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: unset;
+}
+
+.button--frost:hover {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+}
+
+.button--frost:focus-visible {
+  font-weight: 400;
+}
+
+.button__play-icon {
+  margin-right: 0.5rem;
 }
