@@ -4,7 +4,7 @@
 </div>
 
 <h1 align="center">Chrisflix - A Netflix-inspired Trailer Streaming App</h1>
- 
+
 Chrisflix is a **Netflix-inspired** trailer streaming application built with **React**. It leverages the **TMDB API** to display the latest, upcoming, and trending movies and TV shows. Users can explore content through interactive sliders, search for their favorite titles in real-time and watch trailers on a dedicated player page.
 
 🚀 **Live Demo**: [Chrisflix on Vercel](https://chrisflix-react.vercel.app/)
@@ -13,10 +13,11 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
 ## Features
 
+- **User Authentication** with Firebase (Sign Up, Log In, Log Out)
 - **Fetch Movies & TV Shows** using the TMDB API
 - **Responsive UI** for a seamless experience on all devices
 - **Swiper.js Sliders** for smooth content browsing
-- **Real-time search results** update instantly while typing with debounce to reduce unnecessary API calls.
+- **Real-time Search** with debounce to reduce API calls
 - **Trailer Player Page** for each movie/TV show
 - **React Router** for easy navigation
 - **Deployed on Vercel** for fast and simple hosting
@@ -24,6 +25,7 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 ## Tech Stack
 
 - **Frontend**: React (v19), React Router, Swiper.js, CSS
+- **Authentication**: Firebase Auth
 - **API**: [TMDB API](https://www.themoviedb.org/)
 - **Video Provider**: YouTube (for trailers)
 - **Hosting**: Vercel
@@ -47,6 +49,12 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
     ```sh
     VITE_TMDB_API_KEY=your_api_key_here
+    VITE_FIREBASE_API_KEY=your_firebase_api_key
+    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+    VITE_FIREBASE_PROJECT_ID=your_project_id
+    VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+    VITE_FIREBASE_APP_ID=your_app_id
     ```
 
 4. **Start the development server**
@@ -57,8 +65,8 @@ Chrisflix is a **Netflix-inspired** trailer streaming application built with **R
 
 ## 📌 Future Enhancements
 
+- [ ] React Query
 - [ ] Genre selector
-- [ ] User Authentication
 - [ ] Favorites
 
 ## Screenshots
