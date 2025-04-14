@@ -1,22 +1,26 @@
 import Button from '../Button/Button';
 import { toast } from 'react-toastify';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import AuthContext from '../../context/AuthContext';
 
 const UpdateUsernameForm = ({ username, setUsername }) => {
   const { currentUser, updateUsername } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleUpdateUsername = async (e) => {
     e.preventDefault();
     try {
       if (username !== currentUser.displayName) {
+        setIsLoading(true);
         await updateUsername(username);
         toast.success('Username updated');
+        setIsLoading(false);
       } else {
         toast.info('Username is the same as before.');
       }
     } catch (error) {
       toast.error(error.message);
+      setIsLoading(false);
     }
   };
 
@@ -37,7 +41,7 @@ const UpdateUsernameForm = ({ username, setUsername }) => {
           Username
         </label>
       </div>
-      <Button type="submit">Update</Button>
+      <Button type="submit">{isLoading ? 'Updating...' : 'Update'}</Button>
     </form>
   );
 };

@@ -9,6 +9,7 @@ const UpdatePasswordForm = () => {
   const [currentUserPassword, setCurrentUserPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChangePassword = async (e) => {
     e.preventDefault();
@@ -19,17 +20,20 @@ const UpdatePasswordForm = () => {
     }
 
     try {
+      setIsLoading(true);
       await changePassword(currentUserPassword, newPassword);
       toast.success('Password updated');
       setCurrentUserPassword('');
       setNewPassword('');
       setRepeatPassword('');
+      setIsLoading(false);
     } catch (error) {
       if (error.code === 'auth/requires-recent-login') {
         toast.error('You need to re-login to update your password.');
       } else {
         toast.error(error.message);
       }
+      setIsLoading(false);
     }
   };
 
@@ -81,7 +85,7 @@ const UpdatePasswordForm = () => {
           Repeat New Password
         </label>
       </div>
-      <Button type="submit">Update</Button>
+      <Button type="submit">{isLoading ? 'Updating...' : 'Update'}</Button>
     </form>
   );
 };
