@@ -1,11 +1,10 @@
 .swiper-title {
   font-size: 0.875rem;
   height: 1.2rem;
+  max-width: 100%;
   overflow: hidden;
   padding: 0 0.5rem;
   text-overflow: ellipsis;
   transition: opacity 150ms ease;
   white-space: nowrap;
-  max-width: 100%;
-  width: 100%;
 }
