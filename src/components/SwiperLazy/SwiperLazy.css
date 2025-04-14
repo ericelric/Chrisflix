@@ -27,6 +27,11 @@
   transition: transform 200ms ease;
 }
 
+.swiper-button-next:focus-visible::after,
+.swiper-button-prev:focus-visible::after {
+  display: block;
+}
+
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
   transform: scale(1.25);
