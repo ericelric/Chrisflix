@@ -2,7 +2,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import YouTubePlayer from '../../components/YouTubePlayer/YouTubePlayer';
 import PlayerPagePlaceholder from '../../components/PlayerPagePlaceholder/PlayerPagePlaceholder';
 import CircularRating from '../../components/CircularRating/CircularRating';
-import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy';
 import useMediaDetails from '../../hooks/useMediaDetails';
 import useSimilarMedia from '../../hooks/useSimilarMedia';
 import formatRuntime from '../../utils/formatRuntime';

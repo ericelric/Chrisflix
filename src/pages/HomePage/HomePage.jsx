@@ -1,14 +1,14 @@
-import useNowPlayingMovies from '../../hooks/movies/useNowPlayingMovies.js';
-import usePopularMovies from '../../hooks/movies/usePopularMovies.js';
-import useTopRatedMovies from '../../hooks/movies/useTopRatedMovies.js';
-import useUpcomingMovies from '../../hooks/movies/useUpcomingMovies.js';
-import useUpcomingTvShows from '../../hooks/tvShows/useUpcomingTvShows.js';
-import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows.js';
-import useTopRatedTvShows from '../../hooks/tvShows/useTopRatedTvShows.js';
-import useTrendingTvShows from '../../hooks/tvShows/useTrendingTvShows.js';
+import useNowPlayingMovies from '../../hooks/movies/useNowPlayingMovies';
+import usePopularMovies from '../../hooks/movies/usePopularMovies';
+import useTopRatedMovies from '../../hooks/movies/useTopRatedMovies';
+import useUpcomingMovies from '../../hooks/movies/useUpcomingMovies';
+import useUpcomingTvShows from '../../hooks/tvShows/useUpcomingTvShows';
+import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows';
+import useTopRatedTvShows from '../../hooks/tvShows/useTopRatedTvShows';
+import useTrendingTvShows from '../../hooks/tvShows/useTrendingTvShows';
 
-import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
-import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
+import SwiperLazy from '../../components/SwiperLazy/SwiperLazy';
+import HeroBanner from '../../components/HeroBanner/HeroBanner';
 import './HomePage.css';
 
 const HomePage = () => {
