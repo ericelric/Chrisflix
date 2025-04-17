@@ -1,6 +1,6 @@
-import './PlaceholderItem.css';
+import "./PlaceholderItem.css";
 
-const PlaceholderItem = () => {
+const PlaceholderItem = (): React.JSX.Element => {
   return (
     <div className="placeholder__item">
       <div className="placeholder__image"></div>

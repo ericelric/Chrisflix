@@ -1,6 +1,6 @@
-import './Footer.css';
+import "./Footer.css";
 
-const Footer = () => {
+const Footer = (): React.JSX.Element => {
   return (
     <footer>
       <p>© 2025 Chrisflix</p>

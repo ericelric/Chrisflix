@@ -1,7 +1,7 @@
-import PlaceholderItem from '../PlaceholderItem/PlaceholderItem';
-import './SearchPlaceholder.css';
+import PlaceholderItem from "../PlaceholderItem/PlaceholderItem";
+import "./SearchPlaceholder.css";
 
-const SearchPlaceholder = () => {
+const SearchPlaceholder = (): React.JSX.Element => {
   return (
     <>
       <div className="search-placeholder__headline"></div>

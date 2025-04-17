@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import { MovieResult, TvResult } from '../../types/Search';
-import useSearch from '../../hooks/useSearch';
-import './SearchResultsPage.css';
-import SwiperImage from '../../components/SwiperImage/SwiperImage';
-import SwiperTitle from '../../components/SwiperTitle/SwiperTitle';
-import SearchPlaceholder from '../../components/SearchPlaceholder/SearchPlaceholder';
+import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { MovieResult, TvResult } from "../../types/Search";
+import useSearch from "../../hooks/useSearch";
+import "./SearchResultsPage.css";
+import SwiperImage from "../../components/SwiperImage/SwiperImage";
+import SwiperTitle from "../../components/SwiperTitle/SwiperTitle";
+import SearchPlaceholder from "../../components/SearchPlaceholder/SearchPlaceholder";
 
 const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('query') || '';
+  const query = searchParams.get("query") || "";
   const { data, isLoading } = useSearch(query);
   const [movies, setMovies] = useState<MovieResult[]>([]);
   const [tvShows, setTvShows] = useState<TvResult[]>([]);
-  const [lastValidQuery, setLastValidQuery] = useState('');
+  const [lastValidQuery, setLastValidQuery] = useState("");
 
   useEffect(() => {
     if (query) {
@@ -27,8 +27,8 @@ const SearchResultsPage = () => {
       setTvShows([]);
       return;
     }
-    setMovies(data.results.filter((item) => item.media_type === 'movie'));
-    setTvShows(data.results.filter((item) => item.media_type === 'tv'));
+    setMovies(data.results.filter((item) => item.media_type === "movie"));
+    setTvShows(data.results.filter((item) => item.media_type === "tv"));
   }, [query, data]);
 
   return (
@@ -85,9 +85,7 @@ const SearchResultsPage = () => {
               </ul>
             </div>
           )}
-          {!isLoading && data && data.results.length === 0 && query && (
-            <p>No results found.</p>
-          )}
+          {!isLoading && data && data.results.length === 0 && query && <p>No results found.</p>}
         </>
       )}
     </div>

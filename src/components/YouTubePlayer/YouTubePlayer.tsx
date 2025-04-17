@@ -1,14 +1,18 @@
-import useVideoUrl from '../../hooks/useVideoUrl';
-import { PiImage } from 'react-icons/pi';
-import './YouTubePlayer.css';
+import useVideoUrl from "../../hooks/useVideoUrl";
+import { PiImage } from "react-icons/pi";
+import "./YouTubePlayer.css";
+import { MediaType } from "../../types/MediaType";
 
-const YouTubePlayer = ({ mediaType, id }) => {
+interface YouTubePlayerProps {
+  mediaType: MediaType;
+  id: string;
+}
+
+const YouTubePlayer = ({ mediaType, id }: YouTubePlayerProps): React.JSX.Element => {
   const { trailer, backdrop, isLoading, error } = useVideoUrl(mediaType, id);
 
   if (isLoading) {
-    return (
-      <div className="youtube-player__placeholder youtube-player__placeholder--loading"></div>
-    );
+    return <div className="youtube-player__placeholder youtube-player__placeholder--loading"></div>;
   }
 
   if (error) {

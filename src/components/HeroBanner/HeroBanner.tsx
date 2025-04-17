@@ -1,10 +1,14 @@
-import { useMemo } from 'react';
-import CircularRating from '../CircularRating/CircularRating';
-import useTopRatedNewReleases from '../../hooks/useTopRatedNewReleases';
-import './HeroBanner.css';
-import LinkButton from '../LinkButton/LinkButton';
+import { useMemo } from "react";
+import CircularRating from "../CircularRating/CircularRating";
+import LinkButton from "../LinkButton/LinkButton";
+import useTopRatedNewReleases, { ReleaseType } from "../../hooks/useTopRatedNewReleases";
+import "./HeroBanner.css";
 
-const HeroBanner = ({ bannerType = 'combined' }) => {
+interface HeroBannerProps {
+  bannerType: ReleaseType;
+}
+
+const HeroBanner = ({ bannerType = "combined" }: HeroBannerProps): React.JSX.Element | null => {
   const { data, isLoading, error } = useTopRatedNewReleases(bannerType);
 
   const randomItem = useMemo(() => {
@@ -19,8 +23,7 @@ const HeroBanner = ({ bannerType = 'combined' }) => {
         <div className="hero-banner__overlay"></div>
       </div>
     );
-  if (error) return;
-  if (!randomItem) return;
+  if (error || !randomItem) return null;
 
   return (
     <div className="hero-banner">
@@ -29,14 +32,12 @@ const HeroBanner = ({ bannerType = 'combined' }) => {
       </div>
       <div className="hero-banner__info">
         <h2 className="hero-banner__title">
-          {randomItem.title || randomItem.name}
+          {"title" in randomItem ? randomItem.title : randomItem.name}
         </h2>
 
         <div className="hero-banner__description">{randomItem.overview}</div>
         <LinkButton
-          link={`/player/${randomItem.id}?media_type=${
-            randomItem.title !== undefined ? 'movie' : 'tv'
-          }`}
+          link={`/player/${randomItem.id}?media_type=${"title" in randomItem ? "movie" : "tv"}`}
           icon={true}
         >
           Play Trailer
@@ -48,7 +49,7 @@ const HeroBanner = ({ bannerType = 'combined' }) => {
         src={`https://image.tmdb.org/t/p/w1280${
           randomItem.backdrop_path || randomItem.poster_path
         }`}
-        alt={`Featured: ${randomItem.title || randomItem.name}`}
+        alt={`Featured: ${"title" in randomItem ? randomItem.title : randomItem.name}`}
         className="hero-banner__image"
       />
     </div>

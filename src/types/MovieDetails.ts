@@ -17,6 +17,7 @@ export interface MovieDetails {
   imdb_id: string | null;
   original_language: string;
   original_title: string;
+  origin_country: string[];
   overview: string | null;
   popularity: number;
   poster_path: string | null;

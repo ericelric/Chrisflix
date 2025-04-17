@@ -1,12 +1,12 @@
-import usePopularAnimeMovies from '../../hooks/anime/usePopularAnimeMovies.js';
-import usePopularAnimeShows from '../../hooks/anime/usePopularAnimeShows.js';
-import useClassicAnime from '../../hooks/anime/useClassicAnime.js';
-import useStudioGhibliMovies from '../../hooks/anime/useStudioGhibliMovies.js';
+import usePopularAnimeMovies from "../../hooks/anime/usePopularAnimeMovies";
+import usePopularAnimeShows from "../../hooks/anime/usePopularAnimeShows";
+import useClassicAnime from "../../hooks/anime/useClassicAnime";
+import useStudioGhibliMovies from "../../hooks/anime/useStudioGhibliMovies";
 
-import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
-import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
+import SwiperLazy from "../../components/SwiperLazy/SwiperLazy";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
 
-const AnimePage = () => {
+const AnimePage = (): React.JSX.Element => {
   const {
     data: animeMovies,
     isLoading: isAnimeMoviesLoading,
@@ -30,7 +30,7 @@ const AnimePage = () => {
 
   return (
     <>
-      <HeroBanner bannerType={'anime'} />
+      <HeroBanner bannerType={"anime"} />
       <h1>Anime</h1>
       <SwiperLazy
         name="Popular Anime Movies"

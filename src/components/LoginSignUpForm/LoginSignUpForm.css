@@ -16,7 +16,7 @@
   border-radius: 1rem;
   bottom: calc(-1 * var(--gradient-border-size));
   box-shadow: var(--shadow);
-  content: '';
+  content: "";
   left: calc(-1 * var(--gradient-border-size));
   position: absolute;
   right: calc(-1 * var(--gradient-border-size));
@@ -88,10 +88,7 @@
   background-origin: border-box;
   border-radius: 5px;
   border: solid 1px transparent;
-  background-image: linear-gradient(
-      var(--background-secondary),
-      var(--background-secondary)
-    ),
+  background-image: linear-gradient(var(--background-secondary), var(--background-secondary)),
     linear-gradient(
       45deg,
       rgba(255, 172, 94, 1) 0%,

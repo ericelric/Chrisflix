@@ -1,6 +1,6 @@
-import { MediaType } from '../types/MediaType';
-import useApi from './useApi';
-import useMediaDetails from './useMediaDetails';
+import { MediaType } from "../types/MediaType";
+import useApi from "./useApi";
+import useMediaDetails from "./useMediaDetails";
 
 interface Video {
   id: string;
@@ -35,8 +35,7 @@ const useVideoUrl = (mediaType: MediaType, id: string): VideoUrlResult => {
 
   // Get release country & language
   const releaseCountry = mediaDetails?.production_countries?.[0]?.iso_3166_1;
-  const releaseLanguage =
-    mediaDetails?.spoken_languages?.[0]?.iso_639_1 || 'en'; // Fallback to 'en'
+  const releaseLanguage = mediaDetails?.spoken_languages?.[0]?.iso_639_1 || "en"; // Fallback to 'en'
 
   // Construct language query if a release country exists
   const languageQuery = releaseCountry
@@ -45,9 +44,7 @@ const useVideoUrl = (mediaType: MediaType, id: string): VideoUrlResult => {
 
   // Fetch videos in the release country language (if possible)
   const { data: localData } = useApi<Video>(
-    languageQuery
-      ? `/${mediaType}/${id}/videos?language=${languageQuery}`
-      : undefined
+    languageQuery ? `/${mediaType}/${id}/videos?language=${languageQuery}` : undefined
   );
 
   if (isLoading || error || (!enData && !localData)) {
@@ -59,24 +56,19 @@ const useVideoUrl = (mediaType: MediaType, id: string): VideoUrlResult => {
 
   // Sort by published date (oldest first)
   const sortedVideos = videos.sort(
-    (a, b) =>
-      new Date(a.published_at).getTime() - new Date(b.published_at).getTime()
+    (a, b) => new Date(a.published_at).getTime() - new Date(b.published_at).getTime()
   );
 
   // Helper function to find video by type
   const findVideo = (type?: string): Video | undefined =>
-    sortedVideos.find(
-      (video) => video.site === 'YouTube' && (type ? video.type === type : true)
-    );
+    sortedVideos.find((video) => video.site === "YouTube" && (type ? video.type === type : true));
 
   // Find Trailer > Teaser > any YouTube video
-  const trailer = findVideo('Trailer') || findVideo('Teaser') || findVideo();
+  const trailer = findVideo("Trailer") || findVideo("Teaser") || findVideo();
 
   return {
     trailer: trailer || null,
-    backdrop: trailer
-      ? null
-      : mediaDetails?.backdrop_path ?? mediaDetails?.poster_path ?? null,
+    backdrop: trailer ? null : mediaDetails?.backdrop_path ?? mediaDetails?.poster_path ?? null,
     error,
     isLoading,
   };

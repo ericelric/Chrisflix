@@ -1,12 +1,12 @@
-import useApi from '../useApi';
-import { TvShow } from '../../types/TvShow';
+import useApi from "../useApi";
+import { TvShow } from "../../types/TvShow";
 
 const useUpcomingTvShows = () => {
   const today: Date = new Date();
   const nextMonth: Date = new Date();
   nextMonth.setMonth(today.getMonth() + 1); // Move to next month
 
-  const formatDate = (date: Date) => date.toISOString().split('T')[0];
+  const formatDate = (date: Date): string => date.toISOString().split("T")[0];
 
   const minDate: string = formatDate(today); // Today's date
   const maxDate: string = formatDate(nextMonth); // Next month's date

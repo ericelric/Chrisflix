@@ -1,5 +1,4 @@
-import AuthContext from './AuthContext';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -10,56 +9,52 @@ import {
   updatePassword,
   reauthenticateWithCredential,
   EmailAuthProvider,
-} from 'firebase/auth';
-import { auth } from '../firebase';
+  User,
+  UserCredential,
+} from "firebase/auth";
+import { auth } from "../firebase";
+import AuthContext from "./AuthContext";
 
-const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+const AuthProvider = ({ children }: AuthProviderProps) => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const signup = async (email, password, username) => {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    await updateProfile(userCredential.user, {
-      displayName: username,
-    });
+  const signup = async (email: string, password: string, username: string): Promise<UserCredential> => {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(userCredential.user, { displayName: username });
     return userCredential;
   };
 
-  const login = (email, password) => {
+  const login = (email: string, password: string): Promise<UserCredential> => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logout = () => {
+  const logout = (): Promise<void> => {
     return signOut(auth);
   };
 
-  const updateUsername = async (newDisplayName) => {
+  const updateUsername = async (newDisplayName: string): Promise<void> => {
     if (currentUser) {
       await updateProfile(currentUser, { displayName: newDisplayName });
       setCurrentUser({ ...currentUser, displayName: newDisplayName });
     }
   };
 
-  const forgotPassword = (email) => {
+  const forgotPassword = (email: string): Promise<void> => {
     return sendPasswordResetEmail(auth, email);
   };
 
-  const changePassword = async (currentPassword, newPassword) => {
-    if (!currentUser) throw new Error('User not authenticated.');
+  const changePassword = async (currentPassword: string, newPassword: string): Promise<void> => {
+    if (!currentUser || !currentUser.email) {
+      throw new Error("User not authenticated.");
+    }
 
-    // Reauthenticate
-    const credential = EmailAuthProvider.credential(
-      currentUser.email,
-      currentPassword
-    );
-
+    const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
     await reauthenticateWithCredential(currentUser, credential);
-
-    // Update password
     await updatePassword(currentUser, newPassword);
   };
 
@@ -68,8 +63,7 @@ const AuthProvider = ({ children }) => {
       setCurrentUser(user);
       setLoading(false);
     });
-
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
   return (

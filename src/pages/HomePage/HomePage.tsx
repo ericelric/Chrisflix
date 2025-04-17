@@ -1,17 +1,17 @@
-import useNowPlayingMovies from '../../hooks/movies/useNowPlayingMovies';
-import usePopularMovies from '../../hooks/movies/usePopularMovies';
-import useTopRatedMovies from '../../hooks/movies/useTopRatedMovies';
-import useUpcomingMovies from '../../hooks/movies/useUpcomingMovies';
-import useUpcomingTvShows from '../../hooks/tvShows/useUpcomingTvShows';
-import usePopularTvShows from '../../hooks/tvShows/usePopularTvShows';
-import useTopRatedTvShows from '../../hooks/tvShows/useTopRatedTvShows';
-import useTrendingTvShows from '../../hooks/tvShows/useTrendingTvShows';
+import useNowPlayingMovies from "../../hooks/movies/useNowPlayingMovies";
+import usePopularMovies from "../../hooks/movies/usePopularMovies";
+import useTopRatedMovies from "../../hooks/movies/useTopRatedMovies";
+import useUpcomingMovies from "../../hooks/movies/useUpcomingMovies";
+import useUpcomingTvShows from "../../hooks/tvShows/useUpcomingTvShows";
+import usePopularTvShows from "../../hooks/tvShows/usePopularTvShows";
+import useTopRatedTvShows from "../../hooks/tvShows/useTopRatedTvShows";
+import useTrendingTvShows from "../../hooks/tvShows/useTrendingTvShows";
 
-import SwiperLazy from '../../components/SwiperLazy/SwiperLazy';
-import HeroBanner from '../../components/HeroBanner/HeroBanner';
-import './HomePage.css';
+import SwiperLazy from "../../components/SwiperLazy/SwiperLazy";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
+import "./HomePage.css";
 
-const HomePage = () => {
+const HomePage = (): React.JSX.Element => {
   const {
     data: nowPlayingMovies,
     isLoading: isPlayingLoading,
@@ -55,7 +55,7 @@ const HomePage = () => {
 
   return (
     <>
-      <HeroBanner bannerType={'combined'} />
+      <HeroBanner bannerType={"combined"} />
       <h1>Movies</h1>
       <SwiperLazy
         name="Now Playing"

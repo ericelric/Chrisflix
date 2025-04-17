@@ -1,11 +1,11 @@
-import useKidsMovies from '../../hooks/movies/useKidsMovies.js';
-import useClassicMovies from '../../hooks/movies/useClassicMovies.js';
-import useCurrentYearMovies from '../../hooks/movies/useCurrentYearMovies.js';
+import useKidsMovies from "../../hooks/movies/useKidsMovies";
+import useClassicMovies from "../../hooks/movies/useClassicMovies";
+import useCurrentYearMovies from "../../hooks/movies/useCurrentYearMovies";
 
-import SwiperLazy from '../../components/SwiperLazy/SwiperLazy.jsx';
-import HeroBanner from '../../components/HeroBanner/HeroBanner.jsx';
+import SwiperLazy from "../../components/SwiperLazy/SwiperLazy";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
 
-const MoviesPage = () => {
+const MoviesPage = (): React.JSX.Element => {
   const {
     data: kidsMovies,
     isLoading: isKidsMoviesLoading,
@@ -25,7 +25,7 @@ const MoviesPage = () => {
 
   return (
     <>
-      <HeroBanner bannerType={'movie'} />
+      <HeroBanner bannerType={"movie"} />
       <h1>Movies</h1>
       <SwiperLazy
         name={`New in ${currentYear}`}

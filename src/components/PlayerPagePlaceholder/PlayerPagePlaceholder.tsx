@@ -1,6 +1,6 @@
-import './PlayerPagePlaceholder.css';
+import "./PlayerPagePlaceholder.css";
 
-const PlayerPagePlaceholder = () => {
+const PlayerPagePlaceholder = (): React.JSX.Element => {
   return (
     <div className="player-page-placeholder">
       <div className="player-page-placeholder__headline"></div>
