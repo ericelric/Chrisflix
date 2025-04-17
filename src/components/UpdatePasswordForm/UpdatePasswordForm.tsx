@@ -1,38 +1,42 @@
-import Button from '../Button/Button';
-import { toast } from 'react-toastify';
-import { useContext, useState } from 'react';
-import AuthContext from '../../context/AuthContext';
+import Button from "../Button/Button";
+import { toast } from "react-toastify";
+import { FormEvent, useContext, useState } from "react";
+import AuthContext from "../../context/AuthContext";
 
-const UpdatePasswordForm = () => {
-  const { changePassword } = useContext(AuthContext);
+const UpdatePasswordForm = (): React.JSX.Element => {
+  const { changePassword } = useContext(AuthContext)!;
 
-  const [currentUserPassword, setCurrentUserPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [currentUserPassword, setCurrentUserPassword] = useState<string>("");
+  const [newPassword, setNewPassword] = useState<string>("");
+  const [repeatPassword, setRepeatPassword] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleChangePassword = async (e) => {
+  const handleChangePassword = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
     if (newPassword !== repeatPassword) {
-      toast.error('Passwords do not match.');
+      toast.error("Passwords do not match.");
       return;
     }
 
     try {
       setIsLoading(true);
       await changePassword(currentUserPassword, newPassword);
-      toast.success('Password updated');
-      setCurrentUserPassword('');
-      setNewPassword('');
-      setRepeatPassword('');
-      setIsLoading(false);
-    } catch (error) {
-      if (error.code === 'auth/requires-recent-login') {
-        toast.error('You need to re-login to update your password.');
+      toast.success("Password updated");
+      setCurrentUserPassword("");
+      setNewPassword("");
+      setRepeatPassword("");
+    } catch (err) {
+      if (typeof err === "object" && err !== null && "code" in err && "message" in err) {
+        if (err.code === "auth/requires-recent-login") {
+          toast.error(`You need to re-login to update your password.`);
+        } else {
+          toast.error(` ${err.message}`);
+        }
       } else {
-        toast.error(error.message);
+        toast.error("An unknown error occurred.");
       }
+    } finally {
       setIsLoading(false);
     }
   };
@@ -49,7 +53,6 @@ const UpdatePasswordForm = () => {
           required
           value={currentUserPassword}
           onChange={(e) => setCurrentUserPassword(e.target.value)}
-          placeholder=""
         />
         <label className="profile__label" htmlFor="currentPassword">
           Enter Current Password
@@ -64,7 +67,6 @@ const UpdatePasswordForm = () => {
           required
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
-          placeholder=""
         />
         <label className="profile__label" htmlFor="newPassword">
           Enter New Password
@@ -79,13 +81,12 @@ const UpdatePasswordForm = () => {
           required
           value={repeatPassword}
           onChange={(e) => setRepeatPassword(e.target.value)}
-          placeholder=""
         />
         <label className="profile__label" htmlFor="passwordRepeat">
           Repeat New Password
         </label>
       </div>
-      <Button type="submit">{isLoading ? 'Updating...' : 'Update'}</Button>
+      <Button type="submit">{isLoading ? "Updating..." : "Update"}</Button>
     </form>
   );
 };

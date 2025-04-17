@@ -50,7 +50,7 @@ const SwiperLazy = ({ name, data, isLoading, error }: SwiperLazyProps): React.JS
   return (
     <div ref={swiperRef}>
       <h2>{name}</h2>
-      {isSwiperVisible && !isLoading && !error ? (
+      {data !== null && isSwiperVisible && !isLoading && !error ? (
         <Swiper {...getSwiperConfig()}>
           {data.map((item) => {
             const isMovieItem = "title" in item;

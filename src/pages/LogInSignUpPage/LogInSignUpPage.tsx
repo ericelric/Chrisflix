@@ -25,7 +25,7 @@ const LogInSignUpPage = (): React.JSX.Element => {
     setIsResetMode(location.pathname === "/reset-password");
   }, [location.pathname]);
 
-  const handleSubmit = async (e: FormEvent): Promise<void> => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
     if (isResetMode) {
