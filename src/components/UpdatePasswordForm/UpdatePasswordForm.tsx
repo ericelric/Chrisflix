@@ -50,9 +50,11 @@ const UpdatePasswordForm = (): React.JSX.Element => {
           className="profile__input profile__input--current-pw"
           type="password"
           name="currentPassword"
+          autoComplete="current-password"
           required
           value={currentUserPassword}
           onChange={(e) => setCurrentUserPassword(e.target.value)}
+          aria-label="Current Password"
         />
         <label className="profile__label" htmlFor="currentPassword">
           Enter Current Password
@@ -64,9 +66,11 @@ const UpdatePasswordForm = (): React.JSX.Element => {
           className="profile__input"
           type="password"
           name="newPassword"
+          autoComplete="new-password"
           required
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
+          aria-label="New Password"
         />
         <label className="profile__label" htmlFor="newPassword">
           Enter New Password
@@ -78,15 +82,19 @@ const UpdatePasswordForm = (): React.JSX.Element => {
           className="profile__input"
           type="password"
           name="passwordRepeat"
+          autoComplete="new-password"
           required
           value={repeatPassword}
           onChange={(e) => setRepeatPassword(e.target.value)}
+          aria-label="Repeat Password"
         />
         <label className="profile__label" htmlFor="passwordRepeat">
           Repeat New Password
         </label>
       </div>
-      <Button type="submit">{isLoading ? "Updating..." : "Update"}</Button>
+      <Button type="submit" aria-busy={isLoading} aria-label={isLoading ? "Updating..." : "Update"}>
+        {isLoading ? "Updating..." : "Update"}
+      </Button>
     </form>
   );
 };

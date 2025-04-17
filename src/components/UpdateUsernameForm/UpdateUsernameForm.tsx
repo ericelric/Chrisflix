@@ -56,12 +56,15 @@ const UpdateUsernameForm = ({
           value={username}
           onChange={handleChange}
           required
+          aria-label="Username"
         />
         <label className="profile__label" htmlFor="username">
           Username
         </label>
       </div>
-      <Button type="submit">{isLoading ? "Updating..." : "Update"}</Button>
+      <Button type="submit" aria-busy={isLoading} aria-label={isLoading ? "Updating..." : "Update"}>
+        {isLoading ? "Updating..." : "Update"}
+      </Button>
     </form>
   );
 };

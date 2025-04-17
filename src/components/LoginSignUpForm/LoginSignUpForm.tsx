@@ -15,9 +15,9 @@ interface LoginSignUpFormProps {
   setPasswordRepeat: (passwordRepeat: string) => void;
   isLoading: boolean;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleToggleMode: () => void;
-  handleForgotPassword: () => void;
-  handleGoBackToLogin: () => void;
+  handleToggleMode: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleForgotPassword: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleGoBackToLogin: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const LoginSignUpForm = ({
@@ -125,7 +125,24 @@ const LoginSignUpForm = ({
         )}
 
         <div className="signup__actions">
-          <Button disabled={isLoading} type="submit" aria-busy={isLoading}>
+          <Button
+            disabled={isLoading}
+            type="submit"
+            aria-busy={isLoading}
+            aria-label={
+              isLoading
+                ? isResetMode
+                  ? "Sending reset link"
+                  : isSignupMode
+                  ? "Signing up"
+                  : "Logging in"
+                : isResetMode
+                ? "Reset Password"
+                : isSignupMode
+                ? "Sign Up"
+                : "Log In"
+            }
+          >
             {isLoading
               ? isResetMode
                 ? "Sending Reset Link..."

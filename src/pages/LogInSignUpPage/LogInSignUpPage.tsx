@@ -77,19 +77,22 @@ const LogInSignUpPage = (): React.JSX.Element => {
     }
   };
 
-  const handleToggleMode = (): void => {
+  const handleToggleMode = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
     const newMode = !isSignupMode;
     setIsSignupMode(newMode);
     navigate(newMode ? "/signup" : "/login");
   };
 
-  const handleForgotPassword = (): void => {
+  const handleForgotPassword = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
     setIsResetMode(true);
     setIsSignupMode(false);
     navigate("/reset-password");
   };
 
-  const handleGoBackToLogin = (): void => {
+  const handleGoBackToLogin = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
     setIsResetMode(false);
     navigate("/login");
   };
