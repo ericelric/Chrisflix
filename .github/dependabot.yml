@@ -3,8 +3,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
+      time: "09:00"
+      timezone: "Europe/Berlin"
     open-pull-requests-limit: 10
     # Group minor and patch updates to reduce PR noise
     groups:
