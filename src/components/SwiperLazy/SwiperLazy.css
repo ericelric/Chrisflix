@@ -15,12 +15,12 @@
 .swiper-button-next,
 .swiper-button-prev {
   --swiper-navigation-top-offset: calc(50% - 0.85rem);
+  --swiper-navigation-color: var(--white);
 }
 
 .swiper-button-disabled,
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: var(--white);
   display: none;
   font-size: 2rem;
   font-weight: bold;
