@@ -16,6 +16,12 @@
 .swiper-button-prev {
   --swiper-navigation-top-offset: calc(50% - 0.85rem);
   --swiper-navigation-color: var(--white);
+  transition: transform 200ms ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.15);
 }
 
 .swiper-button-disabled,
